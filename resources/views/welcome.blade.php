@@ -27,5 +27,6 @@
 <script type="text/javascript" id="lbscript1747627" src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMQZYdqouRN%252F77J25jqXIyRIHwpiX%252FxqOLO4YWH0MgPb58j9ybR%252Bnt%252Fk"></script><noscript>Please enable JavaScript <br /><div align="center" style="padding-top:5px;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;"><a href="https://www.benchmarkemail.com/email-marketing?utm_source=usersignupforms&utm_medium=customers&utm_campaign=usersignupforms" target="_new" style="text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">Email Marketing </a> by Benchmark</div></noscript>
 <!-- END: Benchmark Email Signup Form Code -->
   </div>
+  @vite('resources/js/app.ts')
 </body>
 </html>
