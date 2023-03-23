@@ -53,13 +53,13 @@
             class="absolute z-10 -ml-4 mt-3 w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 hidden">
             <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
               <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                <a href="./mission.html" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
+                <a href="./mission" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
                   <p class="text-base font-medium">Our mission</p>
                 </a>
-                <a href="./board.html" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
+                <a href="./board" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
                   <p class="text-base font-medium">Our board of directors</p>
                 </a>
-                <a href="./supporters.html" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
+                <a href="./supporters" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
                   <p class="text-base font-medium">Our supporters</p>
                 </a>
                 <a href="https://forms.gle/G7bddcRt45ZN9HZCA" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
@@ -70,9 +70,9 @@
           </div>
         </div>
 
-        <a href="./classes.html" class="text-base font-medium text-gray hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">Classes</a>
-        <a href="./events.html" class="text-base font-medium text-gray hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">Events</a>
-        <a href="./notes.html" class="text-base font-medium text-gray hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">Notes</a>
+        <a href="./classes" class="text-base font-medium text-gray hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">Classes</a>
+        <a href="./events" class="text-base font-medium text-gray hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">Events</a>
+        <a href="./notes" class="text-base font-medium text-gray hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">Notes</a>
 
         <div class="relative">
           <!-- Item active: "text-gray-dark", Item inactive: "text-gray" -->
@@ -107,7 +107,7 @@
             class="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0 hidden">
             <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
               <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                <a href="./teach.html" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-mist">
+                <a href="./teach" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-mist">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 flex-shrink-0 text-secondary">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -120,7 +120,7 @@
                   </div>
                 </a>
 
-                <a href="./volunteer.html" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-mist">
+                <a href="./volunteer" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-mist">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 flex-shrink-0 text-secondary">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -133,7 +133,7 @@
                   </div>
                 </a>
 
-                <a href="./give.html" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-mist">
+                <a href="./give" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-mist">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 flex-shrink-0 text-secondary">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -188,19 +188,19 @@
         </div>
         <div class="mt-6">
           <nav class="grid gap-y-8">
-            <a href="./mission.html" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
+            <a href="./mission" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
               <span class="ml-3 text-base font-medium text-gray-dark">About</span>
             </a>
 
-            <a href="./classes.html" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
+            <a href="./classes" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
               <span class="ml-3 text-base font-medium text-gray-dark">Classes</span>
             </a>
 
-            <a href="./events.html" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
+            <a href="./events" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
               <span class="ml-3 text-base font-medium text-gray-dark">Events</span>
             </a>
 
-            <a href="./teach.html" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
+            <a href="./teach" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
               <span class="ml-3 text-base font-medium text-gray-dark">Get&nbsp;involved</span>
             </a>
           </nav>

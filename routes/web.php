@@ -14,5 +14,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.static.welcome');
 });
+
+Route::get('/classes', function() {
+    return view('web.static.classes');
+});
+
+Route::get('/events', function() {
+    return view('web.static.events');
+});
+
+Route::get('/give', function() {
+    return view('web.static.give');
+});
+
+Route::get('/mission', function() {
+    return view('web.static.mission');
+});
+
+Route::get('/teach', function() {
+    return view('web.static.teach');
+});
+
+Route::get('/volunteer', function() {
+    return view('web.static.volunteer');
+});
+
+
+
