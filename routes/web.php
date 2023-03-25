@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Supporter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('web.static.welcome');
 });
 
+Route::get('/board', function() {
+    return view('web.lists.board');
+});
+
 Route::get('/classes', function() {
     return view('web.static.classes');
 });
@@ -31,6 +36,16 @@ Route::get('/give', function() {
 
 Route::get('/mission', function() {
     return view('web.static.mission');
+});
+
+Route::get('/notes', function() {
+    return view('web.static.notes');
+});
+
+Route::get('/supporters', function() {
+    return view('web.lists.supporters', [
+        'supporters' => Supporter::all()
+    ]);
 });
 
 Route::get('/teach', function() {
