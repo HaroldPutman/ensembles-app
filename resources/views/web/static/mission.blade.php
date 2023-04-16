@@ -13,8 +13,8 @@
       </p>
     </div>
     <div class="mt-4 text-lg md:hidden">
-      <p class="my-2">Meet <a class="text-primary-dark hover:underline" href="./board.html">our board of directors</a>.</p>
-      <p class="my-2">Learn about <a class="text-primary-dark hover:underline" href="./supporters.html">our supporters</a></p>
+      <p class="my-2">Meet <a class="text-primary-dark hover:underline" href="./board">our board of directors</a>.</p>
+      <p class="my-2">Learn about <a class="text-primary-dark hover:underline" href="./supporters">our supporters</a></p>
     </div>
     <div class="mt-10 py-2 text-center border-gray border-solid border-t">
       Ensembles, Inc. is a registered 501(c)(3) organization based in Charlestown, IN.
