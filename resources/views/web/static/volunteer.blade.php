@@ -11,7 +11,7 @@
       </p>
     </div>
     <div class="text-center mt-4">
-      <p>Not interested in volunteering? Maybe you can <a class="text-primary-dark hover:underline" href="./give.html">give musical instruments or other gear</a>.</p>
+      <p>Not interested in volunteering? Maybe you can <a class="text-primary-dark hover:underline" href="./give">give musical instruments or other gear</a>.</p>
     </div>
   </main>
 @stop
