@@ -11,7 +11,7 @@
       </p>
     </div>
     <div class="text-center mt-4">
-      <p>Teaching not your thing? Learn about <a class="text-primary-dark hover:underline" href="./volunteer.html">other ways to volunteer</a>.</p>
+      <p>Teaching not your thing? Learn about <a class="text-primary-dark hover:underline" href="./volunteer">other ways to volunteer</a>.</p>
     </div>
   </main>
 @stop
