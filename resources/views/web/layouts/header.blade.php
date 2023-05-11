@@ -62,7 +62,7 @@
                 <a href="./supporters" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
                   <p class="text-base font-medium">Our supporters</p>
                 </a>
-                <a href="https://forms.gle/G7bddcRt45ZN9HZCA" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
+                <a href="/contact-us" class="-m-3 flex items-start p-3 text-gray hover:bg-gray-mist hover:text-gray-dark rounded-md focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-offset-2">
                   <p class="text-base font-medium">Contact us</p>
                 </a>
               </div>
@@ -211,7 +211,7 @@
           <a href="https://www.paypal.com/donate/?hosted_button_id=XD9PM5ZS77HAY"
             class="flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">Donate</a>
           <p class="mt-6 text-center text-base font-medium text-gray  hover:bg-gray-mist">
-            <a href="https://forms.gle/G7bddcRt45ZN9HZCA" class="mt-6 text-sky-600">Contact us</a>
+            <a href="/contact-us" class="mt-6 text-sky-600">Contact us</a>
           </p>
         </div>
       </div>

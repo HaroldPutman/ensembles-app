@@ -18,6 +18,14 @@ module.exports = {
         DEFAULT: colors.blue[500],
         dark: colors.blue[700]
       },
+      success: {
+        mist: colors.green[100],
+        DEFAULT: colors.green[600],
+      },
+      error: {
+        mist: colors.red[100],
+        DEFAULT: colors.red[600],
+      },
       secondary: {
         light: colors.green[300],
         DEFAULT: colors.green[500],
