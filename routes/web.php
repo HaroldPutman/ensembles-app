@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Supporter;
+use App\Http\Controllers\PHPMailerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +35,7 @@ Route::get('/give', function() {
     return view('web.static.give');
 });
 
-Route::get('/mission', function() {
-    return view('web.static.mission');
-});
+Route::view('/mission', 'web.static.mission');
 
 Route::get('/notes', function() {
     return view('web.static.notes');
@@ -56,5 +55,7 @@ Route::get('/volunteer', function() {
     return view('web.static.volunteer');
 });
 
-
-
+Route::controller(PHPMailerController::class)->group(function () {
+    Route::view('/contact-us', 'web.public.contact-us');
+    Route::post('/create-lead', 'createLead')-> name('create-lead');
+});

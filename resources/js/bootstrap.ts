@@ -13,9 +13,10 @@ window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 */
 import { initHeader } from "./header";
+import {initForm} from "./form";
 
 initHeader();
-
+initForm();
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
