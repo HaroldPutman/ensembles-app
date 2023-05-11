@@ -38,7 +38,7 @@ class PHPMailerController extends Controller {
 
             $mail->isHTML(true);                // Set email content format to HTML
 
-            $mail->Subject = 'Ensembles Web Inquiry';
+            $mail->Subject = 'Ensembles Web Inquiry ' . date('h:ia');
             $mail->Body    = <<<HTML
             <table>
                 <tr>
