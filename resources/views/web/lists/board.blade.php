@@ -3,7 +3,6 @@
 @section('title', 'Board')
 
 @section('content')
-<main class="mx-auto max-w-7xl px-6">
 
 <h1 class="mt-4 text-center text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Board of Directors</h1>
 
@@ -130,5 +129,4 @@
     </p>
   </div>
 </section>
-</main>
 @stop

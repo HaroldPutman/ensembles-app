@@ -47,6 +47,11 @@ Route::get('/supporters', function() {
     ]);
 });
 
+Route::get('/teachers', function() {
+    return view('web.lists.teachers', [
+    ]);
+});
+
 Route::get('/teach', function() {
     return view('web.static.teach');
 });
