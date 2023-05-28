@@ -65,7 +65,7 @@ class PHPMailerController extends Controller {
 
         } catch (Exception $e) {
             Log::error("Exception {$e->getMessage()}");
-            return back()->with('error','There was a problem sending your message. Try again later.');
+            return back()->with('error','There was a problem sending your message. Instead, try sending an email to <a href="mailto:director@charlestownensembles.com">director@charlestownensembles.com</a>.');
         }
     }
 }
