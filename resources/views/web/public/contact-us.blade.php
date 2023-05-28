@@ -14,7 +14,7 @@
       @elseif(session()->has('error'))
         <div class="bg-error-mist border-l-4 border-error text-error p-2 text-left my-2" role="alert">
           <p class="font-bold">Oh No!</p>
-          <p>{{session()->get('error')}}</p>
+          <p>{!! session()->get('error') !!}</p>
         </div>
       @else
         <p class="mt-6 text-lg leading-8">
