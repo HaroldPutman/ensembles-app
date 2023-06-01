@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Supporter;
-use App\Http\Controllers\PHPMailerController;
+use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,7 +55,7 @@ Route::get('/volunteer', function() {
     return view('web.static.volunteer');
 });
 
-Route::controller(PHPMailerController::class)->group(function () {
+Route::controller(ContactUsController::class)->group(function () {
     Route::view('/contact-us', 'web.public.contact-us');
     Route::post('/create-lead', 'createLead')-> name('create-lead');
 });
