@@ -24,18 +24,18 @@
       <form id="contact-us" action="{{route('create-lead')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
         <div>
-            <label for="name" class="block mb-1 text-left text-sm font-medium text-gray-dark dark:text-gray-light">Your name</label>
-            <input type="text" id="name" name="name" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray dark:border-gray dark:placeholder-gray-mist dark:text-white dark:focus:ring-primary dark:focus:border-primary dark:shadow-sm-light" placeholder="Enter your name..." required>
+            <label for="name" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name</label>
+            <input type="text" id="name" name="name" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Enter your name..." required>
         </div>
         <div>
-            <label for="email" class="block mb-1 text-left text-sm font-medium text-gray-dark dark:text-gray-light">Your email</label>
-            <input type="email" id="email" name="email" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray dark:border-gray dark:placeholder-gray-mist dark:text-white dark:focus:ring-primary dark:focus:border-primary dark:shadow-sm-light" placeholder="mail@example.com" required>
+            <label for="email" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your email</label>
+            <input type="email" id="email" name="email" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mail@example.com" required>
         </div>
         <div class="sm:col-span-2">
-            <label for="message" class="block mb-1 text-left text-sm font-medium text-gray-dark dark:text-gray-light">Your message</label>
-            <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-mist dark:text-white dark:focus:ring-primary dark:focus:border-primary" placeholder="Leave a comment..."></textarea>
+            <label for="message" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your message</label>
+            <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="Leave a comment..."></textarea>
         </div>
-        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-md bg-primary sm:w-fit hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light dark:bg-primary dark:hover:bg-primary-light dark:focus:ring-primary-dark disabled:opacity-25">
+        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-md bg-primary sm:w-fit hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light disabled:opacity-25">
             Send message
         </button>
     </form>
