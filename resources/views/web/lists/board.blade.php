@@ -3,8 +3,8 @@
 @section('title', 'Board')
 
 @section('content')
-<main class="mx-auto max-w-7xl px-6">
 
+<article class="mx-auto w-full md:w-3/4 px-6">
 <h1 class="mt-4 text-center text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Board of Directors</h1>
 
 <section class="sm:flex gap-4 my-6">
@@ -25,25 +25,6 @@
     <p class="my-2">
       Ensembles has been a dream for a very long time.   Music is for everyone and Rebecca's hope is that many
       from our community will take advantage and enjoy what Ensembles has to offer Charlestown.
-    </p>
-  </div>
-</section>
-<section class="sm:flex gap-4 my-6">
-  <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-mary-catherine.jpg">
-  <div class="flex-auto">
-    <h2 class="text-xl sm:text-2xl">Mary Catherine Webb</h2>
-    <p class="text-gray-dark">Associate Director</p>
-    <p class="my-2">
-      Mary Catherine is a lifelong musician, having grown up singing and playing piano and
-      violin. Throughout her career, she has performed in many choirs, worship bands and
-      orchestras, as well as completed a vocal residency in Bristol, England.
-    </p>
-    <p class="my-2">
-      Since graduating from Asbury University with her degree in Worship Arts with an
-      emphasis in music, she has found her passion in teaching. She loves helping students
-      of all ages achieve their goals, gain confidence, and grow not only their skills but
-      their enjoyment of music. She is so excited to invest in students and in the mission
-      of Ensembles.
     </p>
   </div>
 </section>
@@ -130,5 +111,5 @@
     </p>
   </div>
 </section>
-</main>
+</article>
 @stop

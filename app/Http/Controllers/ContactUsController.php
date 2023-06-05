@@ -21,6 +21,14 @@ class ContactUsController extends Controller {
             'message' => $request->message,
             'context' => 'general'
         ];
-        Mail::to(env('ENSEMBLES_CONTACT'))->send(new ContactRequest($inquiry));
+        try {
+            Mail::to(env('ENSEMBLES_CONTACT'))->send(new ContactRequest($inquiry));
+            return back()->with('success', __('Your message has been sent.'));
+        } catch(\Exception $e) {
+            Log::error("Exception {$e->getMessage()}");
+            $email = env('ENSEMBLES_CONTACT');
+            return back()->with('error', "There was a problem sending your message. Instead, try sending an email to <a href=\"mailto:$email\">$email</a>.");
+        }
     }
+
 }

@@ -11,11 +11,12 @@
   <link rel="manifest" href="./manifest.webmanifest">
   @vite('resources/css/app.css')
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
   @include('web.layouts.header')
-
-  @yield('content')
-
+  <main class="grow shrink-0 basis-auto flex items-stretch">
+    @yield('content')
+  </main>
+  @include('web.layouts.footer')
   @vite('resources/js/app.ts')
 </body>
 </html>
