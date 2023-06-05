@@ -3,7 +3,7 @@
 @section('title', 'Classes')
 
 @section('content')
-  <div class="w-full">
+  <div class="mx-auto w-full md:w-3/4 px-6">
     <article class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
@@ -20,8 +20,6 @@
                 <li>Homeschool drawing class</li>
                 <li>Beginning band students (woodwinds & brass)</li>
                 <li>Beginning percussion</li>
-                <li>Violin (ages 12+)</li>
-                <li>Embroidery (ages 12+)</li>
             </ul>
         </div>
     </article>
@@ -29,9 +27,7 @@
         <div class="mx-8">
             <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Wednesdays</h2>
             <ul role="list" class="list-disc list-inside text-gray">
-                <li>Mommy & me music time (birth to age 5)</li>
-                <li>Piano (ages 12+)</li>
-                <li>Ukelele (ages 12+)</li>
+                <li>Beginning piano and Ukele for homeschoolers</li>
             </ul>
         </div>
     </article>
@@ -39,9 +35,10 @@
         <div class="mx-8">
             <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Thursdays</h2>
             <ul role="list" class="list-disc list-inside text-gray">
-                <li>Homeschool piano (ages 8+)</li>
                 <li>Homeschool Rudiments with Recorders & Rhythm Sticks (ages 6-12)</li>
-                <li>Drawing (ages 12+)</li>
+                <li>Piano (ages 8+)</li>
+                <li>Drawing (ages 10+)</li>
+                <li>Ukelele (ages 8-12)</li>
                 <li>Guitar (ages 10+)</li>
                 <li>Voice (ages 8+)</li>
             </ul>
@@ -51,9 +48,8 @@
         <div class="mx-8">
             <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Saturdays</h2>
             <ul role="list" class="list-disc list-inside text-gray">
-                <li>Rudiments with Recorders & Rhythm Sticks (ages 6-12)</li>
-                <li>Piano (ages 8-12)</li>
-                <li>Ukelele (ages 8-12)</li>
+                <li>Rudiments with Recorders & Rhythm Sticks (ages 7-12)</li>
+                <li>Open Art & Music space</li>
             </ul>
         </div>
     </article>

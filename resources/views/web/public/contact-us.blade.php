@@ -41,12 +41,4 @@
     </form>
     </div>
   </article>
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lflv1EmAAAAAELvw1KNiQEcPY35ve92VH6enK65"></script>
-  <script>
-    grecaptcha.enterprise.ready(function() {
-        grecaptcha.enterprise.execute('6Lflv1EmAAAAAELvw1KNiQEcPY35ve92VH6enK65', {action: 'login'}).then(function(token) {
-       ...
-    });
-});
-</script>
 @stop
