@@ -3,7 +3,7 @@
 @section('title', 'Contact Us')
 
 @section('content')
-  <main class="mx-auto max-w-7xl px-6">
+  <article class="mx-auto md:w-3/4 w-full px-6">
     <div class="mx-auto max-w-2xl md:text-center">
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Contact Us</h1>
       @if(session()->has('success'))
@@ -40,5 +40,13 @@
         </button>
     </form>
     </div>
-  </main>
+  </article>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lflv1EmAAAAAELvw1KNiQEcPY35ve92VH6enK65"></script>
+  <script>
+    grecaptcha.enterprise.ready(function() {
+        grecaptcha.enterprise.execute('6Lflv1EmAAAAAELvw1KNiQEcPY35ve92VH6enK65', {action: 'login'}).then(function(token) {
+       ...
+    });
+});
+</script>
 @stop
