@@ -16,8 +16,9 @@
             <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Friday Fundraisers</h2>
             <ul role="list" class="list-disc list-inside text-gray">
                 <li>Friendship bracelet party with music from Taylor Swift</li>
-                <li>Painting party with the Red Headed Princess</li>
+                <li>Painting party with <a href="https://www.redheadedprincessdesigns.com/" class="hover:underline">Red Headed Princess Designs</a></li>
                 <li>Tailgate party with live music before each home football game</li>
+                <li>Parents night out</li>
             </ul>
         </div>
     </article>
