@@ -8,7 +8,7 @@
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Our supporters</h1>
       <p class="mt-6 text-lg leading-8">
         Ensembles would not be possible without the help of our generous supporters.
-        <a href="/contact-us">Contact us</a> to find out
+        <a href="/contact-us/supporters">Contact us</a> to find out
         how you can help.
       </p>
     </div>

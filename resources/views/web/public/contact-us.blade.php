@@ -23,6 +23,7 @@
       @endif
       <form id="contact-us" action="{{route('create-lead')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
+        <input type="hidden" name="context" value="{{ $context }}">
         <div>
             <label for="name" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name</label>
             <input type="text" id="name" name="name" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Enter your name..." required>
