@@ -61,6 +61,6 @@ Route::get('/volunteer', function() {
 });
 
 Route::controller(ContactUsController::class)->group(function () {
-    Route::view('/contact-us', 'web.public.contact-us');
+    Route::get('contact-us/{context?}', 'contactUs');
     Route::post('/create-lead', 'createLead')-> name('create-lead');
 });

@@ -36,7 +36,7 @@ class ContactRequest extends Mailable
             replyTo: [
                 new Address($this->inquiry['email'], $this->inquiry['name']),
             ],
-            subject: 'Ensembles Web Contact Request',
+            subject: "Ensembles Web Contact Request [{$this->inquiry['name']}]",
         );
     }
 

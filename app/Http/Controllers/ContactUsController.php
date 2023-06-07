@@ -9,8 +9,8 @@ use App\Mail\ContactRequest;
 
 class ContactUsController extends Controller {
 
-    public function contactUs() {
-        return view("contact-us");
+    public function contactUs($context = 'general') {
+        return view("web.public.contact-us", compact('context'));
     }
 
 
@@ -19,7 +19,7 @@ class ContactUsController extends Controller {
             'email' => $request->email,
             'name' => $request->name,
             'message' => $request->message,
-            'context' => 'general'
+            'context' => $request->context
         ];
         try {
             Mail::to(env('ENSEMBLES_CONTACT'))->send(new ContactRequest($inquiry));
