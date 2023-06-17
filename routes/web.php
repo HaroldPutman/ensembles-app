@@ -60,6 +60,10 @@ Route::get('/volunteer', function() {
     return view('web.static.volunteer');
 });
 
+Route::get('/gallery/rhythm', function() {
+    return view('web.art-gallery.rhythm-show');
+});
+
 Route::controller(ContactUsController::class)->group(function () {
     Route::get('contact-us/{context?}', 'contactUs');
     Route::post('/create-lead', 'createLead')-> name('create-lead');
