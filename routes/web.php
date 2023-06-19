@@ -2,6 +2,7 @@
 
 use App\Models\Supporter;
 use App\Models\Course;
+use App\Models\Teacher;
 use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,7 @@ Route::get('/supporters', function() {
 
 Route::get('/teachers', function() {
     return view('web.lists.teachers', [
+        'teachers' => Teacher::all()
     ]);
 });
 
