@@ -3,8 +3,8 @@
 @section('title', 'Classes')
 
 @section('content')
-  <div class="mx-auto w-full md:w-3/4 px-6">
-    <article class="mx-auto max-w-2xl md:text-center px-2">
+<section class="mx-auto w-full md:w-3/4 px-6">
+    <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
             Ensembles offers six week group classes which will start the week of
@@ -12,46 +12,21 @@
             The cost of a six-week session is $75 per student. Scholarships
             are available.
         </p>
-    </article>
-    <article class="mx-auto w-full my-2">
-        <div class="mx-8">
-            <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Tuesdays</h2>
-            <ul role="list" class="list-disc list-inside text-gray">
-                <li>Homeschool drawing class</li>
-                <li>Beginning band students (woodwinds & brass)</li>
-                <li>Beginning percussion</li>
-            </ul>
-        </div>
-    </article>
-    <article class="mx-auto w-full my-2">
-        <div class="mx-8">
-            <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Wednesdays</h2>
-            <ul role="list" class="list-disc list-inside text-gray">
-                <li>Beginning piano and Ukele for homeschoolers</li>
-            </ul>
-        </div>
-    </article>
-    <article class="mx-auto w-full my-2">
-        <div class="mx-8">
-            <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Thursdays</h2>
-            <ul role="list" class="list-disc list-inside text-gray">
-                <li>Homeschool Rudiments with Recorders & Rhythm Sticks (ages 6-12)</li>
-                <li>Piano (ages 8+)</li>
-                <li>Drawing (ages 10+)</li>
-                <li>Ukelele (ages 8-12)</li>
-                <li>Guitar (ages 10+)</li>
-                <li>Voice (ages 8+)</li>
-            </ul>
-        </div>
-    </article>
-    <article class="mx-auto w-full my-2">
-        <div class="mx-8">
-            <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Saturdays</h2>
-            <ul role="list" class="list-disc list-inside text-gray">
-                <li>Rudiments with Recorders & Rhythm Sticks (ages 7-12)</li>
-                <li>Open Art & Music space</li>
-            </ul>
-        </div>
-    </article>
-  </div>
+    </header>
+    <div>
+
+        @foreach ($courses as $course)
+        <article class="w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-4">
+            <h2 class="text-2xl">{{ $course->name }}</h2>
+            <p class="text-gray">{{ $course->start->format('l') }} at {{ $course->start->format('g:i A') }}</p>
+            <p class="text-gray">{{ $course->ages }}</p>
+            <p>{{ $course->description }}</p>
+            <p class="flex justify-end">
+            <a href="/register/id" title="Registration opens June 24"
+            class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-light px-4 py-2 text-base font-medium text-gray-dark cursor-not-allowed shadow-sm">Register</a>
+            </p>
+        </article>
+        @endforeach
+    </div>
+</section>
 @stop

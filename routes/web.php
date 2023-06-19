@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Supporter;
+use App\Models\Course;
 use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,9 @@ Route::get('/board', function() {
 });
 
 Route::get('/classes', function() {
-    return view('web.static.classes');
+    return view('web.static.classes', [
+        'courses' => Course::all()
+    ]);
 });
 
 Route::get('/events', function() {
