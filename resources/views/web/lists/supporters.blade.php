@@ -20,7 +20,7 @@
           <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <article class="overflow-hidden rounded-lg shadow-lg pb-4">
                 <a href="{{ $supporter->url }}">
-                <img alt="Placeholder" class="block h-auto w-full" src="/image/supporter/{{ $supporter->image_path }}">
+                <img alt="{{ $supporter->name }} Logo" class="block h-auto w-full" src="/image/supporter/{{ $supporter->image_path }}">
                 </a>
                 <h1 class="text-lg text-center mt-4">
                 <a class="no-underline hover:underline text-black" href="{{ $supporter->url }}">
