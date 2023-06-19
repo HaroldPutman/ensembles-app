@@ -60,7 +60,7 @@
       <section class="sm:flex gap-4 my-6">
         <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-picture.png">
         <div class="flex-auto">
-          <h2 class="text-xl sm:text-2xl">Sherry Massengale</h2>
+          <h2 class="text-xl sm:text-2xl">Sherri Massengale</h2>
           <p class="text-gray-dark">Handbells</p>
           <p class="my-2">
               (insert bio here)
