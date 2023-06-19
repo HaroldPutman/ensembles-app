@@ -17,7 +17,7 @@ return new class extends Migration
             $table->dateTime('start');
             $table->string('ages', 64);
             $table->integer('duration');
-            $table->string('description', 512);
+            $table->string('description', 1024);
             $table->enum('level', ['beginner', 'intermediate', 'advanced']);
             $table->enum('status',['unavailable','open','full','closed']);
             $table->timestamps();
