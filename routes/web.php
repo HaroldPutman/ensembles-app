@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistrationController;
 use App\Models\Supporter;
 use App\Models\Course;
 use App\Models\Teacher;
@@ -72,4 +73,9 @@ Route::get('/gallery/rhythm', function() {
 Route::controller(ContactUsController::class)->group(function () {
     Route::get('contact-us/{context?}', 'contactUs');
     Route::post('/create-lead', 'createLead')-> name('create-lead');
+});
+
+Route::controller(RegistrationController::class)->group(function () {
+    Route::get('register/{classId}', 'register');
+    Route::post('/create-registration', 'create')-> name('create-registration');
 });
