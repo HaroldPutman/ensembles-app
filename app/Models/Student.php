@@ -20,4 +20,9 @@ class Student extends Model
     {
         return $this->belongsToMany(Contact::class);
     }
+
+    public function courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'registrations')->withTimestamps()->withPivot('payment');
+    }
 }

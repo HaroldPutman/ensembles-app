@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
     public function register($classId) {
-        return view("web.public.register", compact('classId'));
+        $course = Course::find($classId);
+        if (!$course) {
+            abort(404);
+        }
+        return view("web.public.register", compact('course'));
     }
 
     public function create(Request $request) {
@@ -24,13 +29,14 @@ class RegistrationController extends Controller
             'lastname' => $request->input('lastname') ?: $request->input('student_lastname'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
-/*            'address' => $request->input('address'),
+            'address' => $request->input('address'),
             'city' => $request->input('city'),
             'state' => $request->input('state'),
-            'zip' => $request->input('zip'), */
+            'zip' => $request->input('zip'),
         ]);
         $contact->save();
         $contact->students()->save($student);
+        $student->courses()->attach($request->input('courseId'));
         return 'DoNE';
     }
 }

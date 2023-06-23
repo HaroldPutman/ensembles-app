@@ -7,12 +7,14 @@
     <header class="mx-auto max-w-2xl md:text-center">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Registration</h1>
         <p class="mt-6 text-lg leading-8">
-           Let's get your student signed up.
+           Let's get your student signed up for <strong class="font-bold">{{ $course->name }}</strong>.
+           This course meets {{ $course->start->format('l') }} at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
         </p>
     </header>
     <article>
         <form id="contact-us" action="{{route('create-registration')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
+            <input type="hidden" name="courseId" value="{{ $course->id }}"/>
             <div>
                 <label for="student_firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student name</label>
                 <div class="grid grid-cols-2 gap-4">
