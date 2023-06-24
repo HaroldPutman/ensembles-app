@@ -79,7 +79,7 @@ Route::controller(ContactUsController::class)->group(function () {
 Route::controller(RegistrationController::class)->group(function () {
     Route::get('register/{classId}', 'register');
     Route::post('register/create', 'create')->name('registration-create');
-    Route::get('register/thankyou/{transactionId}', 'thankyou');
+    Route::get('register/thankyou/{courseId}/{studentId}/{transactionId}', 'thankyou');
 });
 
 Route::controller(PayPalController::class)->group(function() {

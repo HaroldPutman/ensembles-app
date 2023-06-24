@@ -9,7 +9,16 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    public function thankyou($transactionId) {
+    public function thankyou($courseId, $studentId, $transactionId) {
+        $student = Student::find($studentId);
+        if (!$student) {
+            abort(404);
+        }
+        $course = Course::find($courseId);
+        if (!$course) {
+            abort(404);
+        }
+        $student->courses()->attach($courseId, ['payment' => $transactionId]);
         return view('web.public.thankyou');
     }
 
@@ -41,7 +50,7 @@ class RegistrationController extends Controller
         $contact->save();
         $contact->students()->save($student);
         // Don't attach until payment
-        $student->courses()->attach($request->input('courseId'));
+        // $student->courses()->attach($request->input('courseId'));
         return view('web.public.payment', [
             'studentId' => $student->id,
             'courseId' => $request->input('courseId'),

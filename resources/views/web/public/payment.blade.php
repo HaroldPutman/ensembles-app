@@ -12,6 +12,7 @@
         </p>
     </header>
     <article class="mx-auto max-w-2xl md:text-center px-2">
+        <div id="loader" style="visibility:hidden">Please Wait</div>
         <div id="paypal-button-container"></div>
     </article>
     <script>
@@ -19,6 +20,7 @@
           .Buttons({
             // Sets up the transaction when a payment button is clicked
             createOrder: function () {
+              document.getElementById('loader').style.visibility = 'visible';
               console.log('Create Order'); // Show a spinner
               return fetch("/paypal/create-order", {
                 method: "post",
@@ -38,7 +40,11 @@
                 }),
               })
                 .then((response) => response.json())
-                .then((order) => order.id);
+                .then((order) => {
+                   console.log(`Order ID: ${order.id}`);
+                   document.getElementById('loader').style.visibility = 'hidden';
+                   return order.id;
+                })
             },
             // Finalize the transaction after payer approval
             onApprove: function (data) {
@@ -63,19 +69,6 @@
                     JSON.stringify(orderData, null, 2)
                   );
                   const transaction = orderData.purchase_units[0].payments.captures[0];
-                  /*
-                  alert(
-                    "Transaction " +
-                      transaction.status +
-                      ": " +
-                      transaction.id +
-                      "\n\nSee console for all available details"
-                  );
-                  */
-                  // When ready to go live, remove the alert and show a success message within this page. For example:
-                  // var element = document.getElementById('paypal-button-container');
-                  // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                  // Or go to another URL:  actions.redirect('thank_you.html');
                   actions.redirect(`/register/thankyou/${transaction.id}`);
                 });
             },
