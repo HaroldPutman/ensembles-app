@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
+    public function thankyou($transactionId) {
+        return view('web.public.thankyou');
+    }
+
     public function register($classId) {
         $course = Course::find($classId);
         if (!$course) {
@@ -36,7 +40,13 @@ class RegistrationController extends Controller
         ]);
         $contact->save();
         $contact->students()->save($student);
+        // Don't attach until payment
         $student->courses()->attach($request->input('courseId'));
-        return 'DoNE';
+        return view('web.public.payment', [
+            'studentId' => $student->id,
+            'courseId' => $request->input('courseId'),
+            'contact' => $contact,
+            'clientId' => env('PAYPAL_CLIENT_ID'),
+        ]);
     }
 }

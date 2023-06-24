@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\RegistrationController;
 use App\Models\Supporter;
 use App\Models\Course;
@@ -77,5 +78,11 @@ Route::controller(ContactUsController::class)->group(function () {
 
 Route::controller(RegistrationController::class)->group(function () {
     Route::get('register/{classId}', 'register');
-    Route::post('/create-registration', 'create')-> name('create-registration');
+    Route::post('register/create', 'create')->name('registration-create');
+    Route::get('register/thankyou/{transactionId}', 'thankyou');
+});
+
+Route::controller(PayPalController::class)->group(function() {
+    Route::post('paypal/create-order', 'createOrder');
+    Route::post('paypal/capture-payment', 'capturePayment');
 });

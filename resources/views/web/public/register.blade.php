@@ -12,7 +12,7 @@
         </p>
     </header>
     <article>
-        <form id="contact-us" action="{{route('create-registration')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <form id="contact-us" action="{{route('registration-create')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             <input type="hidden" name="courseId" value="{{ $course->id }}"/>
             <div>
