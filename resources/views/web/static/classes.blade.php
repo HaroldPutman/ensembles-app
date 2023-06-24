@@ -16,14 +16,14 @@
     <div>
 
         @foreach ($courses as $course)
-        <article class="w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-4">
+        <article class="md:w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-6">
             <h2 class="text-2xl">{{ $course->name }}</h2>
             <p class="text-gray">{{ $course->start->format('l') }} at {{ $course->start->format('g:i A') }}</p>
             <p class="text-gray">{{ $course->ages }}</p>
             <p>{{ $course->description }}</p>
             <p class="flex justify-end">
-            <a href="/register/id" title="Registration opens June 24"
-            class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-light px-4 py-2 text-base font-medium text-gray-dark cursor-not-allowed shadow-sm">Register</a>
+            <a href="/register/{{ $course->id }}" title="Registration is open"
+            class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-dark px-4 py-2 text-base font-medium text-white shadow-sm">Register</a>
             </p>
         </article>
         @endforeach

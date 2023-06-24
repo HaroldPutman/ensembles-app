@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h2 {
+    font-weight: 600;
+    padding-bottom: .3em;
+    font-size: 1.5em;
+}
+
+.markdown-body h3 {
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.markdown-body h4 {
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.markdown-body h5 {
+    font-weight: 600;
+    font-size: .875em;
+}
+
+.markdown-body h6 {
+font-weight: 600;
+font-size: .85em;
+color: #57606a;
+}
+
+.markdown-body p {
+margin-top: 0;
+margin-bottom: 10px;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.markdown-body ul {
+    list-style-type: disc;
+}

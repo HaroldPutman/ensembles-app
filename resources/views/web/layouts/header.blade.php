@@ -4,7 +4,7 @@
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="/">
           <span class="sr-only">Ensembles, Inc.</span>
-          <img class="h-16 w-auto sm:h-14" src="image/ensembles-black-logo.svg" alt="">
+          <img class="h-16 w-auto sm:h-14" src="/image/ensembles-black-logo.svg" alt="">
         </a>
       </div>
       <div class="-my-2 -mr-2 md:hidden">
@@ -174,7 +174,7 @@
       <div class="px-5 pt-5 pb-6">
         <div class="flex items-center justify-between">
           <div>
-            <img class="h-14 w-auto" src="image/ensembles-black-logo.svg" alt="">
+            <img class="h-14 w-auto" src="/image/ensembles-black-logo.svg" alt="">
           </div>
           <div class="-mr-2">
             <button id="hdr-close" type="button"

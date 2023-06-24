@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\RegistrationController;
 use App\Models\Supporter;
 use App\Models\Course;
 use App\Models\Teacher;
@@ -72,4 +74,15 @@ Route::get('/gallery/rhythm', function() {
 Route::controller(ContactUsController::class)->group(function () {
     Route::get('contact-us/{context?}', 'contactUs');
     Route::post('/create-lead', 'createLead')-> name('create-lead');
+});
+
+Route::controller(RegistrationController::class)->group(function () {
+    Route::get('register/{classId}', 'register');
+    Route::post('register/create', 'create')->name('register-create');
+    Route::post('register/thankyou', 'thankyou')->name('register-thankyou');
+});
+
+Route::controller(PayPalController::class)->group(function() {
+    Route::post('paypal/create-order', 'createOrder');
+    Route::post('paypal/capture-payment', 'capturePayment');
 });
