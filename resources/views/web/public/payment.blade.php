@@ -8,6 +8,8 @@
     <header class="mx-auto max-w-2xl md:text-center px-2 mb-4">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Checkout</h1>
         <p class="mt-6 text-lg">
+            Registering {{ $student->firstname }} {{ $student->lastname }}.
+            The total charge is: $75.00
             Please provide your payment information below.
         </p>
     </header>
@@ -63,17 +65,25 @@
                 .then((response) => response.json())
                 .then((orderData) => {
                   // Successful capture! For dev/demo purposes:
-                  console.log(
+                  /* console.log(
                     "Capture result",
                     orderData,
                     JSON.stringify(orderData, null, 2)
-                  );
+                  ); */
                   const transaction = orderData.purchase_units[0].payments.captures[0];
-                  actions.redirect(`/register/thankyou/${transaction.id}`);
+                  const form = document.getElementById('registration_data');
+                  form.querySelector('[name=transactionId]').value = transaction.id;
+                  form.submit();
                 });
             },
           })
           .render("#paypal-button-container");
       </script>
 </section>
+<form id="registration_data" action="{{ route('register-thankyou') }}" method="POST">
+    @csrf
+    <input type="hidden" name="transactionId" value="">
+    <input type="hidden" name="courseId" value="{{ $courseId }}">
+    <input type="hidden" name="studentId" value="{{ $student->id }}">
+</form>
 @stop

@@ -12,7 +12,7 @@
         </p>
     </header>
     <article>
-        <form id="contact-us" action="{{route('registration-create')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <form id="contact-us" action="{{route('register-create')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             <input type="hidden" name="courseId" value="{{ $course->id }}"/>
             <div>
@@ -137,11 +137,22 @@ LEGAL) !!}
                 <input id="agree" name="agree" type="checkbox" value="agree" class="w-4 h-4 text-gray-dark bg-gray-mist border-gray-light rounded focus:ring-primary focus:ring-2 ">
                 <label for="agree" class="ml-2 text-sm font-medium text-gray-dark ">I have read and agree to the terms</label>
             </div>
-            <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-md bg-primary sm:w-fit hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light disabled:opacity-25">
+            <button id="continue" type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-md bg-primary sm:w-fit hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light disabled:opacity-25">
                 Continue to Payment
             </button>
         </form>
     </article>
 </section>
-
+<script>
+    const continueBtn = document.getElementById('continue');
+    const agree = document.getElementById('agree');
+    continueBtn.disabled = !agree.checked;
+    agree.addEventListener('change', function() {
+        if (this.checked) {
+          continueBtn.disabled = false;
+        } else {
+          continueBtn.disabled = true;
+        }
+    });
+</script>
 @stop
