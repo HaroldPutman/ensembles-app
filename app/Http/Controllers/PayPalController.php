@@ -14,14 +14,31 @@ class PayPalController extends Controller
         $response = Http::withToken($token)->post(
             env('PAYPAL_API'). '/v2/checkout/orders', [
                 'intent' => 'CAPTURE',
-                'purchase_units' => [
-                    [
+                'purchase_units' => [[
                         'amount' => [
                             'currency_code' => 'USD',
-                            'value' => '75.00'
-                        ]
-                    ]
+                            'value' => '75.00',
+                            'breakdown' => [
+                                'item_total' => [
+                                    'value' => '75.00',
+                                    'currency_code' => 'USD',
+                                ]
+                            ]
+                        ],
+                        'items' => [[
+                            'category' => 'DIGITAL_GOODS',
+                            'name' => 'Guitar Class',
+                            'unit_amount' => [
+                                'currency_code' => 'USD',
+                                'value' => '75.00',
+                            ],
+                            'quantity' => 1,
+                        ]]
+                   ]],
+                'application_context' => [
+                    'shipping_preference' => 'NO_SHIPPING',
                 ]
+
             ]);
         $response->throw();
         return $response->json();
