@@ -14,6 +14,7 @@
     </div>
     <div class="mt-4 text-lg md:hidden">
       <p class="my-2">Meet <a class="text-primary-dark hover:underline" href="./board">our board of directors</a>.</p>
+      <p class="my-2">Meet <a class="text-primary-dark hover:underline" href="./teachers">our teachers</a>.</p>
       <p class="my-2">Learn about <a class="text-primary-dark hover:underline" href="./supporters">our supporters</a></p>
     </div>
   </article>
