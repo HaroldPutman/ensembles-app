@@ -27,10 +27,10 @@ class PayPalController extends Controller
                         ],
                         'items' => [[
                             'category' => 'DIGITAL_GOODS',
-                            'name' => 'Guitar Class',
+                            'name' => 'Guitar Class', // TODO Make this be actual class
                             'unit_amount' => [
                                 'currency_code' => 'USD',
-                                'value' => '75.00',
+                                'value' => '75.00', // Don't hardcode the amount
                             ],
                             'quantity' => 1,
                         ]]
@@ -46,11 +46,15 @@ class PayPalController extends Controller
 
     public function capturePayment(Request $request) {
         $token = $this->generateAccessToken();
-        $response = Http::withToken($token)->post(
+        $payPalResponse = Http::withToken($token)->post(
             env('PAYPAL_API') . '/v2/checkout/orders/' .$request->input('orderID') . '/capture',
             ['json' => []]);
-        $response->throw();
-        return $response->json();
+        if (!$payPalResponse->clientError()) {
+            // Client errors have information about card processing failure, so
+            // want to respond with normal JSON.
+            $payPalResponse->throw();
+        };
+        return response()->json($payPalResponse->json(), $payPalResponse->status());
     }
 
     public function generateAccessToken() {

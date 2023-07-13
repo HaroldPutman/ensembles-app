@@ -47,11 +47,16 @@
                    document.getElementById('loader').style.visibility = 'hidden';
                    return order.id;
                 })
+                .catch((error) => {
+                    console.log('I have problems.');
+                    console.log(error);
+                });
             },
             // Finalize the transaction after payer approval
             onApprove: function (data) {
               console.log('Capture Payment');
-
+              var buttonContainer = document.getElementById('paypal-button-container');
+              buttonContainer.innerHTML = '<h3>Processing your payment</h3>'
               return fetch("/paypal/capture-payment", {
                 method: "post",
                 headers: {
@@ -62,7 +67,16 @@
                   orderID: data.orderID,
                 }),
               })
-                .then((response) => response.json())
+                .then((response) => {
+                    if (!response.ok) {
+                        // Likely a card error, throw to process...
+                        const err = new Error(`ERROR: ${response.status}`);
+                        err.response = response
+                        err.status = response.status
+                        throw err
+                    }
+                    return response.json()
+                })
                 .then((orderData) => {
                   // Successful capture! For dev/demo purposes:
                   /* console.log(
@@ -70,10 +84,19 @@
                     orderData,
                     JSON.stringify(orderData, null, 2)
                   ); */
+                  // name= "UNPROCESSIBLE_ENTITY"
                   const transaction = orderData.purchase_units[0].payments.captures[0];
                   const form = document.getElementById('registration_data');
                   form.querySelector('[name=transactionId]').value = transaction.id;
                   form.submit();
+                })
+                .catch((error) => {
+                    console.log('There was an error', error);
+                    if (error.response) {
+                        error.response.json().then((message) => {
+                            console.log(JSON.stringify(message, null, 2));
+                        })
+                    }
                 });
             },
           })
