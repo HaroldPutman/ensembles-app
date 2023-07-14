@@ -80,9 +80,9 @@ class RegistrationController extends Controller
     }
 
     public function paymentRetry(Request $request) {
-        if ($request->has('error')) {
-            $request->session()->flash('error', 'There was an error processing your transaction. Please try again. '
-                . $request->input('error'));
+        if ($request->has('errorMessage')) {
+            $failure = 'There was an error processing your transaction. Please try again. '
+                . $request->input('errorMessage');
         }
         $student = $request->session()->get('student', function () use($request) {
             Student::find($request->input('studentId'));
@@ -97,6 +97,7 @@ class RegistrationController extends Controller
             abort(404);
         }
         return view('web.public.payment', [
+            'failure' => $failure,
             'student' => $student,
             'course' => $course,
             'clientId' => env('PAYPAL_CLIENT_ID'),

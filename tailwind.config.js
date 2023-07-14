@@ -21,10 +21,12 @@ module.exports = {
       success: {
         mist: colors.green[100],
         DEFAULT: colors.green[600],
+        dark: colors.green[700]
       },
       error: {
         mist: colors.red[100],
         DEFAULT: colors.red[600],
+        dark: colors.red[700]
       },
       secondary: {
         light: colors.green[300],
