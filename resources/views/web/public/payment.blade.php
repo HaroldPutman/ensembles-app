@@ -35,7 +35,7 @@
                 body: JSON.stringify({
                   cart: [
                     {
-                      sku: "EDU{{ sprintf('%06d', $courseId) }}",
+                      sku: "EDU{{ sprintf('%06d', $course->id) }}",
                       quantity: "1",
                     },
                   ],
@@ -95,7 +95,10 @@
                     if (error.response) {
                         error.response.json().then((message) => {
                             console.log(JSON.stringify(message, null, 2));
-                        })
+                            const form = document.getElementById('payment_failed');
+                            form.querySelector('[name=errorMessage]').value = message.name;
+                            form.submit();
+                        });
                     }
                 });
             },
@@ -106,7 +109,13 @@
 <form id="registration_data" action="{{ route('register-thankyou') }}" method="POST">
     @csrf
     <input type="hidden" name="transactionId" value="">
-    <input type="hidden" name="courseId" value="{{ $courseId }}">
+    <input type="hidden" name="courseId" value="{{ $course->id }}">
+    <input type="hidden" name="studentId" value="{{ $student->id }}">
+</form>
+<form id="payment_failed" action="{{ route('payment-retry') }}" method="POST">
+    @csrf
+    <input type="hidden" name="errorMessage" value="">
+    <input type="hidden" name="courseId" value="{{ $course->id }}">
     <input type="hidden" name="studentId" value="{{ $student->id }}">
 </form>
 @stop
