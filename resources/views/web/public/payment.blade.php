@@ -6,13 +6,10 @@
 <section class="mx-auto w-full md:w-3/4 px-6">
     <script src="https://www.paypal.com/sdk/js?client-id={{ $clientId }}&currency=USD"></script>
     @if (isset($failure))
-    <div class="bg-error-mist border border-error text-error-dark px-4 py-3 rounded relative" role="alert">
-        <strong class="font-bold">Holy smokes!</strong>
+    <div id="failure" class="bg-error-mist border border-error text-error-dark px-4 py-3 rounded relative" role="alert">
+        <strong class="font-bold">ERROR:</strong>
         <span class="block sm:inline">{{ $failure }}</span>
-        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-          <svg class="fill-current h-6 w-6 text-error-dark" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-        </span>
-      </div>
+    </div>
     @endif
     <header class="mx-auto max-w-2xl md:text-center px-2 mb-4">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Checkout</h1>
@@ -31,6 +28,12 @@
           .Buttons({
             // Sets up the transaction when a payment button is clicked
             createOrder: function () {
+              // Hide error alert
+              const errorAlert = document.getElementById('failure');
+              if (errorAlert) {
+                errorAlert.style.display = 'none';
+              }
+              // Show the loader
               document.getElementById('loader').style.visibility = 'visible';
               console.log('Create Order'); // Show a spinner
               return fetch("/paypal/create-order", {
@@ -105,7 +108,8 @@
                         error.response.json().then((message) => {
                             console.log(JSON.stringify(message, null, 2));
                             const form = document.getElementById('payment_failed');
-                            form.querySelector('[name=errorMessage]').value = message.name;
+                            const reason = Array.isArray(message.details) ? message.details[0].description : 'Unknown error';
+                            form.querySelector('[name=errorMessage]').value = reason;
                             form.submit();
                         });
                     }

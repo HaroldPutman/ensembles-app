@@ -80,10 +80,10 @@ class RegistrationController extends Controller
     }
 
     public function paymentRetry(Request $request) {
-        if ($request->has('errorMessage')) {
-            $failure = 'There was an error processing your transaction. Please try again. '
-                . $request->input('errorMessage');
-        }
+
+        $failure = $request->has('errorMessage') ?
+            'There was an error processing your transaction. Please try again, or use a different payment method.' :
+            null;
         $student = $request->session()->get('student', function () use($request) {
             Student::find($request->input('studentId'));
         });
