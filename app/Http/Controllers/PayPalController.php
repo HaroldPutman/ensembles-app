@@ -27,7 +27,7 @@ class PayPalController extends Controller
                         ],
                         'items' => [[
                             'category' => 'DIGITAL_GOODS',
-                            'name' => 'Guitar Class', // TODO Make this be actual class
+                            'name' => 'Ensembles Class', // TODO Make this be actual class
                             'unit_amount' => [
                                 'currency_code' => 'USD',
                                 'value' => '75.00', // Don't hardcode the amount
