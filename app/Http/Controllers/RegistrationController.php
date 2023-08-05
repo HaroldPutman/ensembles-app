@@ -28,7 +28,7 @@ class RegistrationController extends Controller
             abort(404);
         }
         $student->courses()->attach($course->id, ['payment' => $request->input('transactionId')]);
-        return view('web.public.thankyou');
+        return view('web.public.thankyou')->with('transactionId', $request->input('transactionId'));
     }
 
     public function register($classId) {
@@ -82,7 +82,7 @@ class RegistrationController extends Controller
     public function paymentRetry(Request $request) {
 
         $failure = $request->has('errorMessage') ?
-            'There was an error processing your transaction. Please try again, or use a different payment method.' :
+            'We weren’t able to process your payment. Check all the details are correct and try again or try a different payment method.' :
             null;
         $student = $request->session()->get('student', function () use($request) {
             Student::find($request->input('studentId'));

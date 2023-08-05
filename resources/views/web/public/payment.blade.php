@@ -118,10 +118,26 @@
           })
           .render("#paypal-button-container");
       </script>
+      <script>
+        function payByCheck() {
+            const form = document.getElementById('registration_provisional');
+            form.submit();
+            return false;
+        }
+      </script>
+      <div class="mx-auto max-w-2xl text-center border-t-2 border-gray-light py-4">
+        <a class="text-primary hover:underline text-xl" onclick="payByCheck()" href="#">Pay by Check</a>
+      </div>
 </section>
 <form id="registration_data" action="{{ route('register-thankyou') }}" method="POST">
     @csrf
     <input type="hidden" name="transactionId" value="">
+    <input type="hidden" name="courseId" value="{{ $course->id }}">
+    <input type="hidden" name="studentId" value="{{ $student->id }}">
+</form>
+<form id="registration_provisional" action="{{ route('register-thankyou') }}" method="POST">
+    @csrf
+    <input type="hidden" name="transactionId" value="PROVISIONAL:CHECK">
     <input type="hidden" name="courseId" value="{{ $course->id }}">
     <input type="hidden" name="studentId" value="{{ $student->id }}">
 </form>
