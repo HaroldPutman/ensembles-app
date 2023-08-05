@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Course;
 use App\Models\Student;
+use App\Models\Registration;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -27,8 +28,18 @@ class RegistrationController extends Controller
         if (!$course) {
             abort(404);
         }
+        $already = Registration::where([
+            'student_id' => $request->input('studentId'),
+            'course_id' => $request->input('courseId')
+        ])->first();
+        if ($already) {
+            return view('web.public.already', [
+                'student' => $student,
+                'course' => $course,
+            ]);
+        }
         $student->courses()->attach($course->id, ['payment' => $request->input('transactionId')]);
-        return view('web.public.thankyou');
+        return view('web.public.thankyou')->with('transactionId', $request->input('transactionId'));
     }
 
     public function register($classId) {
@@ -70,6 +81,16 @@ class RegistrationController extends Controller
         if (!$course) {
             abort(404);
         }
+        $already = Registration::where([
+            'student_id' => $student->id,
+            'course_id' => $course->id
+        ])->first();
+        if ($already) {
+            return view('web.public.already', [
+                'student' => $student,
+                'course' => $course,
+            ]);
+        }
         $request->session()->put('student', $student);
         $request->session()->put('course', $course);
         return view('web.public.payment', [
@@ -82,7 +103,7 @@ class RegistrationController extends Controller
     public function paymentRetry(Request $request) {
 
         $failure = $request->has('errorMessage') ?
-            'There was an error processing your transaction. Please try again, or use a different payment method.' :
+            'We weren’t able to process your payment. Check all the details are correct and try again or try a different payment method.' :
             null;
         $student = $request->session()->get('student', function () use($request) {
             Student::find($request->input('studentId'));

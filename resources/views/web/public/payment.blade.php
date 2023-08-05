@@ -118,7 +118,34 @@
           })
           .render("#paypal-button-container");
       </script>
+      <script>
+        function payByCheck() {
+            const payByCheckDialog = document.getElementById('payByCheck');
+            payByCheckDialog.showModal();
+            return false;
+        }
+      </script>
+      <div class="mx-auto max-w-2xl text-center border-t-2 border-gray-light py-4">
+        <a class="text-primary hover:underline text-xl" onclick="payByCheck()" href="#">Pay by Check</a>
+      </div>
 </section>
+<dialog id="payByCheck">
+    <form action="{{ route('register-thankyou') }}" method="POST">
+        @csrf
+        <input type="hidden" name="transactionId" value="PROVISIONAL:CHECK">
+        <input type="hidden" name="courseId" value="{{ $course->id }}">
+        <input type="hidden" name="studentId" value="{{ $student->id }}">
+        <p>
+            If you pay by check your registration is not complete until we
+            receive your payment.
+        </p>
+        <div class="py-4">
+            <button class="my-2 mx-2 py-3 px-5 text-sm font-medium text-center text-white rounded-md bg-gray sm:w-fit hover:bg-gray-dark focus:ring-4 focus:outline-none focus:ring-primary-light disabled:opacity-25" value="cancel" formmethod="dialog">Cancel</button>
+            <button class="my-2 mx-2 py-3 px-5 text-sm font-medium text-center text-white rounded-md bg-secondary sm:w-fit hover:bg-secondary-dark focus:ring-4 focus:outline-none focus:ring-primary-light disabled:opacity-25" id="confirmBtn" value="default">Pay by check</button>
+        </div>
+    </form>
+  </dialog>
+
 <form id="registration_data" action="{{ route('register-thankyou') }}" method="POST">
     @csrf
     <input type="hidden" name="transactionId" value="">
