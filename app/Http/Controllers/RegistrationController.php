@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Course;
 use App\Models\Student;
+use App\Models\Registration;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -26,6 +27,16 @@ class RegistrationController extends Controller
         $course = Course::find($request->input('courseId'));
         if (!$course) {
             abort(404);
+        }
+        $already = Registration::where([
+            'student_id' => $request->input('studentId'),
+            'course_id' => $request->input('courseId')
+        ])->first();
+        if ($already) {
+            return view('web.public.already', [
+                'student' => $student,
+                'course' => $course,
+            ]);
         }
         $student->courses()->attach($course->id, ['payment' => $request->input('transactionId')]);
         return view('web.public.thankyou')->with('transactionId', $request->input('transactionId'));
@@ -69,6 +80,16 @@ class RegistrationController extends Controller
         $course = Course::find($request->input('courseId'));
         if (!$course) {
             abort(404);
+        }
+        $already = Registration::where([
+            'student_id' => $student->id,
+            'course_id' => $course->id
+        ])->first();
+        if ($already) {
+            return view('web.public.already', [
+                'student' => $student,
+                'course' => $course,
+            ]);
         }
         $request->session()->put('student', $student);
         $request->session()->put('course', $course);

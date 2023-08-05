@@ -12,7 +12,7 @@
                 your registration will be complete.
             </p>
             <p class="mt-4 text-lg">
-                You can mail a check to:
+                Please make your check payable to:
             </p>
             <address>
                 Ensembles
