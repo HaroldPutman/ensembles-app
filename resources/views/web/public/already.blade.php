@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('title', 'Thank you')
+@section('title', 'Already Registered')
 
 @section('content')
 <section class="mx-auto w-full md:w-3/4 px-6">
