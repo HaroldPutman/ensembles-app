@@ -27,4 +27,13 @@ class Contact extends Model
     {
         return $this->belongsToMany(Student::class);
     }
+
+    /**
+     * Formats the phone number before inserting into database.
+     */
+    public function setPhoneAttribute($phone)
+    {
+        $justTheNumber = preg_replace(['/[^0-9]*/','/^[10]*/'],'', $phone);
+        $this->attributes['phone'] = substr_replace(substr_replace($justTheNumber, '-', 3, 0), '-', 7, 0);
+    }
 }
