@@ -111,7 +111,7 @@
             </div>
             <div>
                 <label for="phone" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your phone</label>
-                <input type="text" id="phone" name="phone" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="000-000-0000" required>
+                <input type="text" id="phone" name="phone" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="000-000-0000" required pattern="\d{3}.*\d{3}.*\d{4}">
             </div>
             <div>
                 <label for="note" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student allergies, health concerns, etc...</label>
