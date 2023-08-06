@@ -24,12 +24,12 @@
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student birthdate <span class="text-xs">(enter like 3/21/1974)</span></label>
+                    <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student birthdate <small class="text-xs">(enter like 3/21/1974)</small></label>
                     <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" required pattern="\d{1,2}/\d{1,2}/\d{4}">
                 </div>
             </div>
             <div>
-                <label for="firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name <span class="text-xs">(Enter it again if you are the student.)</span></label>
+                <label for="firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name <small class="text-xs">(enter it again if you are the student)</small></label>
                 <div class="grid grid-cols-2 gap-4">
                     <input type="text" id="firstname" name="firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="First Name" required>
                     <input type="text" id="lastname" name="lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Last Name" required>
