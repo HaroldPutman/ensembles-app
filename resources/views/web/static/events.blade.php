@@ -21,7 +21,7 @@
     <article class="mx-auto w-full my-2">
         <div class="mx-8">
             <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Deanne Moore Art Gallery</h2>
-            <p>The Deanne Moore Art Gallery will kick off our first art show <a class="hover:underline text-primary-dark" href="/gallery/rhythm">Rhythm</a> August 5-September 10.
+            <p>The Deanne Moore Art Gallery will kick off our second art show <a class="hover:underline text-primary-dark" href="/gallery/blue">Blue</a> Sept 18 - Oct 22, 2023.
         </div>
     </article>
 
