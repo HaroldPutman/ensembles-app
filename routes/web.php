@@ -29,7 +29,7 @@ Route::get('/board', function() {
 
 Route::get('/classes', function() {
     return view('web.static.classes', [
-        'courses' => Course::all()
+        'courses' => Course::orderBy('start')->get(),
     ]);
 });
 
