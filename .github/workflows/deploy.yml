@@ -1,12 +1,8 @@
 name: Deploy
 
-# Trigger the workflow on push and
-# pull request events on the production branch
+# Trigger the workflow when merging to main branch
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
