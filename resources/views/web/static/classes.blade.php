@@ -8,7 +8,8 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
             Ensembles offers six week group classes which will start the week of
-            August 22, 2023. Registration will open on June 24.
+            August 22, 2023. Registration will close on Aug 22. The next session begins
+            Oct 10.
             The cost of a six-week session is $75 per student. Scholarships
             are available.
         </p>
