@@ -5,6 +5,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Models\Supporter;
 use App\Models\Course;
 use App\Models\Teacher;
+use App\Models\Event;
 use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,12 +30,14 @@ Route::get('/board', function() {
 
 Route::get('/classes', function() {
     return view('web.static.classes', [
-        'courses' => Course::orderBy('start')->get(),
+        'courses' => Course::whereDate('start', '>=', date('Y-m-d'))->orderBy('start')->get(),
     ]);
 });
 
 Route::get('/events', function() {
-    return view('web.static.events');
+    return view('web.static.events', [
+        'events' => Event::whereDate('start', '>=', date('Y-m-d'))->orderBy('start')->get(),
+    ]);
 });
 
 Route::get('/give', function() {
