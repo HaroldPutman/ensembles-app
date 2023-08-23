@@ -78,7 +78,7 @@ class EventSeeder extends Seeder
                 'start' => '2023-11-10 18:00:00',
                 'end' => '2023-11-10 21:00:00',
                 'description' => <<<'DESC'
-                Drop the kids off for a night of arts-oriente fun featuring "The Greatest Showman".
+                Drop the kids off for a night of arts-oriented fun featuring "The Greatest Showman".
                 DESC,
                 'created_at' => '2023-08-22 21:02:00'
             ],

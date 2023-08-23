@@ -8,7 +8,7 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
             Ensembles offers six week group classes. The next session begins
-            <em class="font-bold">October 10, 2023</em> and registration for next session will open
+            <em class="font-bold">October 10, 2023</em> and registration opens
             Sep 10.
             The cost of a six-week session is $75 per student. Scholarships
             are available.
