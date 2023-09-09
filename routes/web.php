@@ -58,7 +58,7 @@ Route::get('/supporters', function() {
 
 Route::get('/teachers', function() {
     return view('web.lists.teachers', [
-        'teachers' => Teacher::all()
+        'teachers' => Teacher::where('active', true)->orderBy('name')->get()
     ]);
 });
 
