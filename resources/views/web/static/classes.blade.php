@@ -23,7 +23,7 @@
             <p class="text-gray">{{ $course->ages }}</p>
             <p>{{ $course->description }}</p>
             <p class="flex justify-end">
-            <a href="/register/{{ $course->id }}" title="Registration is open"
+            <a href="{{ $course->alt_url ? $course->alt_url : '/register/' . $course->id }}" title="Registration is open"
             class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-dark px-4 py-2 text-base font-medium text-white shadow-sm">Register</a>
             </p>
         </article>
