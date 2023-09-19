@@ -8,7 +8,7 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Events</h1>
         <p class="mt-6 text-lg">
             Ensembles is excited to host arts events for Charlestown and surrounding communities!
-            All events are free and are held at 1120 Monroe St. in Charlestown unless otherwise noted.
+            All events are are held at 1120 Monroe St. in Charlestown and free unless otherwise noted.
         </p>
     </header>
     <div>
