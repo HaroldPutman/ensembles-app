@@ -8,10 +8,10 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Events</h1>
         <p class="mt-6 text-lg">
             Ensembles is excited to host arts events for Charlestown and surrounding communities!
-            All events are free and are held at 1120 Monroe St. in Charlestown unless otherwise noted.
+            All events are are held at <a class="hover:underline text-primary-dark" href="https://maps.app.goo.gl/WqYGomh8Q6roJKAc8">1120 Monroe Street</a> in Charlestown.
         </p>
     </header>
-    <div>
+    <div class="mt-4">
 
         @foreach ($events as $event)
         <article class="md:w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-6">
