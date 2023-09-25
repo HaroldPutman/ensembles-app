@@ -37,4 +37,5 @@ class Course extends Model
         }
         return 'Up to age ' . $this->age_max;
     }
+
 }

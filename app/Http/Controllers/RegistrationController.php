@@ -59,6 +59,11 @@ class RegistrationController extends Controller
      * @return \Illuminate\Contracts\View\View A view with the PayPal control
      */
     public function create(Request $request) {
+        $validated = $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'age' => 'required|integer|gte:min_age|lte:max_age',
+        ]);
         $student = Student::firstOrNew([
             'firstname' => $request->input('student_firstname'),
             'lastname' => $request->input('student_lastname'),

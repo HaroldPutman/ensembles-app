@@ -8,13 +8,18 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Registration</h1>
         <p class="mt-6 text-lg leading-8">
            Let's get your student signed up for <strong class="font-bold">{{ $course->name }}</strong>.
-           This course meets {{ $course->start->format('l') }} at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
+           This course meets {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
+           Open to students {{ strtolower($course->age_range) }}.
         </p>
     </header>
     <article>
         <form id="contact-us" action="{{route('register-create')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             <input type="hidden" name="courseId" value="{{ $course->id }}"/>
+            <!-- filled in after birthdate is entered -->
+            <input type="hidden" name="age" value=""/>
+            <input type="hidden" name="min_age" value="{{ $course->min_age }}"/>
+            <input type="hidden" name="max_age" value="{{ $course->max_age }}"/>
             <div>
                 <label for="student_firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student name</label>
                 <div class="grid grid-cols-2 gap-4">
@@ -144,6 +149,15 @@ LEGAL) !!}
     </article>
 </section>
 <script>
+    const age = document.querySelector('input[name="age"]');
+    const birthdate = document.getElementById('birthdate');
+    birthdate.addEventListener('change', function() {
+        const birthdate = new Date(this.value);
+        const today = new Date();
+        const diff = today - birthdate;
+        const age = Math.floor(diff / 31557600000);
+        document.querySelector('input[name="age"]').value = age;
+    });
     const continueBtn = document.getElementById('continue');
     const agree = document.getElementById('agree');
     continueBtn.disabled = !agree.checked;
