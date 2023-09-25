@@ -8,18 +8,28 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Registration</h1>
         <p class="mt-6 text-lg leading-8">
            Let's get your student signed up for <strong class="font-bold">{{ $course->name }}</strong>.
-           This course meets {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
-           Open to students {{ strtolower($course->age_range) }}.
+        </p>
+        <p class="mt-6 text-lg leading-8">
+            This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
+           It is open to students {{ strtolower($course->age_range) }}.
         </p>
     </header>
     <article>
+        @if ($errors->any())
+            <div class="mt-6 bg-error-mist border border-error text-error-dark px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <ul class="md:mx-6">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form id="contact-us" action="{{route('register-create')}}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             <input type="hidden" name="courseId" value="{{ $course->id }}"/>
             <!-- filled in after birthdate is entered -->
             <input type="hidden" name="age" value=""/>
-            <input type="hidden" name="min_age" value="{{ $course->min_age }}"/>
-            <input type="hidden" name="max_age" value="{{ $course->max_age }}"/>
             <div>
                 <label for="student_firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student name</label>
                 <div class="grid grid-cols-2 gap-4">

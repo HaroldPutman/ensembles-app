@@ -60,9 +60,16 @@ class RegistrationController extends Controller
      */
     public function create(Request $request) {
         $validated = $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'age' => 'required|integer|gte:min_age|lte:max_age',
+            'student_firstname' => 'required',
+            'student_lastname' => 'required',
+            'birthdate' => 'required|date',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required|numeric',
+            'agree' => 'required',
         ]);
         $student = Student::firstOrNew([
             'firstname' => $request->input('student_firstname'),
@@ -86,6 +93,14 @@ class RegistrationController extends Controller
         if (!$course) {
             abort(404);
         }
+        $ageMin = $course->age_min ?: 0;
+        $ageMax = $course->age_max ?: 99;
+        $request->validate([
+            'age' => 'required|numeric|min:' . $ageMin . '|max:' . $ageMax,
+        ], [
+            'age.min' => 'The student must be at least ' . $ageMin . ' years old.',
+            'age.max' => 'The student must be no more than ' . $ageMax . ' years old.',
+        ]);
         $already = Registration::where([
             'student_id' => $student->id,
             'course_id' => $course->id
