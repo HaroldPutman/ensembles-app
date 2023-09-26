@@ -98,8 +98,8 @@ class RegistrationController extends Controller
         $request->validate([
             'age' => 'required|numeric|min:' . $ageMin . '|max:' . $ageMax,
         ], [
-            'age.min' => 'The student must be at least ' . $ageMin . ' years old.',
-            'age.max' => 'The student must be no more than ' . $ageMax . ' years old.',
+            'age.min' => 'The student must be at least ' . $ageMin . ' years old on the first day of class.',
+            'age.max' => 'The student must be no more than ' . $ageMax . ' years old on the first day of class.',
         ]);
         $already = Registration::where([
             'student_id' => $student->id,

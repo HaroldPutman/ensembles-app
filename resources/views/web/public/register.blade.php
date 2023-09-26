@@ -163,8 +163,8 @@ LEGAL) !!}
     const birthdate = document.getElementById('birthdate');
     birthdate.addEventListener('change', function() {
         const birthdate = new Date(this.value);
-        const today = new Date();
-        const diff = today - birthdate;
+        const refDay = new Date('{{ strtolower($course->start->format('Y-m-d')) }}');
+        const diff = refDay - birthdate;
         const age = Math.floor(diff / 31557600000);
         document.querySelector('input[name="age"]').value = age;
     });
