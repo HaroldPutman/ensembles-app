@@ -19,8 +19,8 @@
         @foreach ($courses as $course)
         <article class="md:w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-6">
             <h2 class="text-2xl">{{ $course->name }}</h2>
-            <p class="text-gray">{{ $course->start->format('l') }} at {{ $course->start->format('g:i A') }}</p>
-            <p class="text-gray">{{ $course->ages }}</p>
+            <p class="text-gray">{{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}</p>
+            <p class="text-gray">{{ $course->age_range }}</p>
             <p>{{ $course->description }}</p>
             <p class="flex justify-end">
             <a href="{{ $course->alt_url ? $course->alt_url : '/register/' . $course->id }}" title="Registration is open"

@@ -13,6 +13,7 @@ class Student extends Model
     use HasFactory;
     use HasUlids;
 
+    protected $dates = ['birthdate'];
     protected $fillable = ['firstname', 'lastname', 'birthdate', 'note'];
 
     /**
@@ -26,5 +27,10 @@ class Student extends Model
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'registrations')->withTimestamps()->withPivot('payment');
+    }
+
+    public function getAgeAttribute(): int
+    {
+        return $this->birthdate->age;
     }
 }

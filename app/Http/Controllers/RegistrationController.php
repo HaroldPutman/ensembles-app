@@ -59,6 +59,18 @@ class RegistrationController extends Controller
      * @return \Illuminate\Contracts\View\View A view with the PayPal control
      */
     public function create(Request $request) {
+        $validated = $request->validate([
+            'student_firstname' => 'required',
+            'student_lastname' => 'required',
+            'birthdate' => 'required|date',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required|numeric',
+            'agree' => 'required',
+        ]);
         $student = Student::firstOrNew([
             'firstname' => $request->input('student_firstname'),
             'lastname' => $request->input('student_lastname'),
@@ -81,6 +93,14 @@ class RegistrationController extends Controller
         if (!$course) {
             abort(404);
         }
+        $ageMin = $course->age_min ?: 0;
+        $ageMax = $course->age_max ?: 99;
+        $request->validate([
+            'age' => 'required|numeric|min:' . $ageMin . '|max:' . $ageMax,
+        ], [
+            'age.min' => 'The student must be at least ' . $ageMin . ' years old on the first day of class.',
+            'age.max' => 'The student must be no more than ' . $ageMax . ' years old on the first day of class.',
+        ]);
         $already = Registration::where([
             'student_id' => $student->id,
             'course_id' => $course->id
