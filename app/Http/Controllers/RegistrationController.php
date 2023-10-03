@@ -44,7 +44,7 @@ class RegistrationController extends Controller
 
     public function register($classId) {
         $course = Course::find($classId);
-        if (!$course) {
+        if (!$course || $course->status != 'open') {
             abort(404);
         }
         return view("web.public.register", compact('course'));
