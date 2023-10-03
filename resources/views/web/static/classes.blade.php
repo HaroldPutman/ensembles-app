@@ -22,9 +22,16 @@
             <p class="text-gray">{{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}</p>
             <p class="text-gray">{{ $course->age_range }}</p>
             <p>{{ $course->description }}</p>
-            <p class="flex justify-end">
-            <a href="{{ $course->alt_url ? $course->alt_url : '/register/' . $course->id }}" title="Registration is open"
-            class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-dark px-4 py-2 text-base font-medium text-white shadow-sm">Register</a>
+            @if ($course->status == 'full')
+                <p class="text-xl text-error italic text-right">Sorry, this class is full.</p>
+            @endif
+           <p class="flex justify-end">
+            @if ($course->status == 'open')
+                <a href="{{ $course->alt_url ? $course->alt_url : '/register/' . $course->id }}" title="Registration is open"
+                    class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-dark px-4 py-2 text-base font-medium text-white shadow-sm">Register</a>
+            @else
+              <a class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-dark px-4 py-2 text-base font-medium text-white shadow-sm opacity-30 cursor-not-allowed">Register</a>
+            @endif
             </p>
         </article>
         @endforeach
