@@ -43,6 +43,12 @@ module.exports = {
         light: colors.gray[300],
         DEFAULT: colors.gray[500],
         dark: colors.gray[700]
+      },
+      amber: {
+        mist: colors.amber[100],
+        light: colors.amber[300],
+        DEFAULT: colors.amber[500],
+        dark: colors.amber[700]
       }
     }
   },

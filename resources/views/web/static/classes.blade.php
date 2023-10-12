@@ -13,6 +13,10 @@
             The cost of a six-week session is $75 per student. Scholarships
             are available.
         </p>
+        <p class="mt-4 mb-6 text-lg">
+            All classes are held at Ensembles, 1120 Monroe St. (Across the street from
+            the Charlestown High School tennis courts.)
+        </p>
     </header>
     <div>
 
