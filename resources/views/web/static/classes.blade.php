@@ -7,10 +7,11 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            Ensembles offers six week group classes. The next session begins
-            <em class="font-bold">October 10, 2023</em> and registration opens
-            Sep 10.
-            The cost of a six-week session is $75 per student. Scholarships
+            Ensembles typically runs six week sessions of group lessons. The next
+            session is a special 3 week holiday session beginning
+            <em class="font-bold">November 27, 2023</em> and registration opens
+            Oct 27.
+            The cost of the three-week holiday session is $40 per student. Scholarships
             are available.
         </p>
         <p class="mt-4 mb-6 text-lg">
