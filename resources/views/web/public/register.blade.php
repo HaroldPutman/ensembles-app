@@ -11,7 +11,7 @@
         </p>
         <p class="mt-6 text-lg leading-8">
             This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
-           It is open to students {{ strtolower($course->age_range) }}.
+           It is open to students {{ strtolower($course->age_range) }}. The cost is ${{ $course->price }}.
         </p>
     </header>
     <article>

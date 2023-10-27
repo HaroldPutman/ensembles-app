@@ -15,7 +15,7 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Checkout</h1>
         <p class="mt-6 text-lg">
             Registering {{ $student->firstname }} {{ $student->lastname }}.
-            The total charge is: $75.00
+            The total charge is: ${{ $course->price }}.
             Please provide your payment information below.
         </p>
     </header>
@@ -49,6 +49,8 @@
                     {
                       sku: "EDU{{ sprintf('%06d', $course->id) }}",
                       quantity: "1",
+                      name: "{{ $course->name }}",
+                      price: "{{ $course->price }}",
                     },
                   ],
                 }),
