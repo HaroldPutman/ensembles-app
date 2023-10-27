@@ -11,26 +11,32 @@ class PayPalController extends Controller
     //
     public function createOrder(Request $request) {
         $token = $this->generateAccessToken();
+        /**
+         * Get JSON from request body
+         */
+        $requestBody = $request->json()->all();
+        $cart = $requestBody['cart'];
+
         $response = Http::withToken($token)->post(
             env('PAYPAL_API'). '/v2/checkout/orders', [
                 'intent' => 'CAPTURE',
                 'purchase_units' => [[
                         'amount' => [
                             'currency_code' => 'USD',
-                            'value' => '75.00',
+                            'value' => $cart[0]['price'],
                             'breakdown' => [
                                 'item_total' => [
-                                    'value' => '75.00',
+                                    'value' => $cart[0]['price'],
                                     'currency_code' => 'USD',
                                 ]
                             ]
                         ],
                         'items' => [[
                             'category' => 'DIGITAL_GOODS',
-                            'name' => 'Ensembles Class', // TODO Make this be actual class
+                            'name' => $cart[0]['name'],
                             'unit_amount' => [
                                 'currency_code' => 'USD',
-                                'value' => '75.00', // Don't hardcode the amount
+                                'value' => $cart[0]['price'],
                             ],
                             'quantity' => 1,
                         ]]
