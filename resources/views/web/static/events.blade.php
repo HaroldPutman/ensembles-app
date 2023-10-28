@@ -18,12 +18,18 @@
             <h2 class="text-2xl">{{ $event->name }}</h2>
             <p class="text-gray">{{ $event->start->format('l, F j \a\t g:i A') }} - {{ $event->end->format('g:i A') }}</p>
             <p>{{ $event->description }}</p>
+            @if ($event->course_id)
+            <p class="flex justify-end">
+                <a href="{{ '/register/' . $event->course_id }}" title="Register for {{ $event->name }}"
+                    class="flex w-48 items-center justify-center rounded-md border border-transparent bg-gray-dark px-4 py-2 text-base font-medium text-white shadow-sm">Register</a>
+            </p>
+            @endif
         </article>
         @endforeach
         <article class="mx-auto w-full my-2">
             <div class="mx-8">
                 <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Deanne Moore Art Gallery</h2>
-                <p>The Deanne Moore Art Gallery will kick off our second art show <a class="hover:underline text-primary-dark" href="/gallery/blue">Blue</a> Sept 18 - Oct 22, 2023.
+                <p>The Deanne Moore Art Gallery will kick off our third art show <i class="italic">An Apple for the teacher</i> Oct 28 - Nov 18, 2023.
             </div>
         </article>
     </div>
