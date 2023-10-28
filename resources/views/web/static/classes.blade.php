@@ -24,7 +24,13 @@
         @foreach ($courses as $course)
         <article class="md:w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-6">
             <h2 class="text-2xl">{{ $course->name }}</h2>
-            <p class="text-gray">{{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}</p>
+            <p class="text-gray">
+                @if ($course->duration == 1)
+                    {{ $course->start->format('l M d') }} at {{ $course->start->format('g:i A') }}
+                @else
+                    {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}
+                @endif
+            </p>
             <p class="text-gray">{{ $course->age_range }}</p>
             <p>{{ $course->description }}</p>
             @if ($course->status == 'full')
