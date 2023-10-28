@@ -7,12 +7,19 @@
     <header class="mx-auto max-w-2xl md:text-center">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Registration</h1>
         <p class="mt-6 text-lg leading-8">
-           Let's get your student signed up for <strong class="font-bold">{{ $course->name }}</strong>.
+          Let's get your student signed up for <strong class="font-bold">{{ $course->name }}</strong>.
         </p>
+        @if ($course->duration > 1)
         <p class="mt-6 text-lg leading-8">
-            This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
-           It is open to students {{ strtolower($course->age_range) }}. The cost is ${{ $course->price }}.
+          This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
+          It is open to students {{ strtolower($course->age_range) }}. The cost is ${{ $course->price }}.
         </p>
+        @else
+        <p class="mt-6 text-lg leading-8">
+          This event is on {{ $course->start->format('l, M d') }} at {{ $course->start->format('g:i A') }}.
+          It is open to students {{ strtolower($course->age_range) }}. The cost is ${{ $course->price }}.
+        </p>
+        @endif
     </header>
     <article>
         @if ($errors->any())
