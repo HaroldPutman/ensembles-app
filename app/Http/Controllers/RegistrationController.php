@@ -12,6 +12,26 @@ class RegistrationController extends Controller
 {
     /**
      * Called when registration payment is complete.
+     * @param Student $student The student
+     * @param Course $course The course being registered
+     * @param string $payment The verified payment transaction ID from PayPal or a Pseudo ID.
+     */
+    private function registerStudent($student, $course, $payment) {
+        $already = Registration::where([
+            'student_id' => $student->id,
+            'course_id' => $course->id
+        ])->first();
+        if ($already) {
+            return view('web.public.already', [
+                'student' => $student,
+                'course' => $course,
+            ]);
+        }
+        $student->courses()->attach($course->id, ['payment' => $payment]);
+        return view('web.public.thankyou')->with('transactionId', $payment);
+    }
+    /**
+     * Called when registration payment is complete.
      * @param Request $request The request with these values:
      *  - studentId - The student
      *  - courseId - The course being registered
@@ -28,18 +48,7 @@ class RegistrationController extends Controller
         if (!$course) {
             abort(404);
         }
-        $already = Registration::where([
-            'student_id' => $request->input('studentId'),
-            'course_id' => $request->input('courseId')
-        ])->first();
-        if ($already) {
-            return view('web.public.already', [
-                'student' => $student,
-                'course' => $course,
-            ]);
-        }
-        $student->courses()->attach($course->id, ['payment' => $request->input('transactionId')]);
-        return view('web.public.thankyou')->with('transactionId', $request->input('transactionId'));
+        return $this->registerStudent($student, $course, $request->input('transactionId'));
     }
 
     public function register($classId) {
@@ -113,11 +122,43 @@ class RegistrationController extends Controller
         }
         $request->session()->put('student', $student);
         $request->session()->put('course', $course);
-        return view('web.public.payment', [
-            'student' => $student,
-            'course' => $course,
-            'clientId' => env('PAYPAL_CLIENT_ID'),
-        ]);
+        return $course->donation ?
+            view('web.public.donation', [
+                'student' => $student,
+                'course' => $course,
+            ]) :
+            view('web.public.payment', [
+                'student' => $student,
+                'course' => $course,
+                'amount' => $course->price,
+                'clientId' => env('PAYPAL_CLIENT_ID'),
+            ]);
+    }
+
+    public function donate(Request $request) {
+        $student = $request->session()->get('student', function () use($request) {
+            Student::find($request->input('studentId'));
+        });
+        if (!$student) {
+            abort(404);
+        }
+        $course = $request->session()->get('course', function () use($request) {
+            return Course::find($request->input('courseId'));
+        });
+        if (!$course) {
+            abort(404);
+        }
+        $willDonate = $request->input('will-donate');
+        $amount = preg_replace('/[^\d.]/', '', $request->input('amount')) ?: 0;
+        if ($willDonate == 'yes' && $amount > 0) {
+            return view('web.public.payment', [
+                'student' => $student,
+                'course' => $course,
+                'amount' => $amount,
+                'clientId' => env('PAYPAL_CLIENT_ID'),
+            ]);
+        }
+        return $this->registerStudent($student, $course, 'DONATION $0');
     }
 
     public function paymentRetry(Request $request) {
