@@ -6,8 +6,10 @@
 <section class="mx-auto w-full md:w-3/4 px-6">
     <header class="mx-auto max-w-2xl md:text-center px-2 mb-4">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Donation Amount</h1>
-        <p class="mt-6 text-lg">
+        <p class="mt-6 text-center text-lg">
             {{ $student->firstname }} {{ $student->lastname }}, we're excited to have you join us for {{ $course->name }}!
+        </p>
+        <p class="mt-2 text-lg">
             There is no charge for this group, but your donation will help us continue to provide
             music education to the community.
         </p>
