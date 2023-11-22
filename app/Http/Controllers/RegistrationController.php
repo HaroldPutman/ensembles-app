@@ -136,9 +136,6 @@ class RegistrationController extends Controller
     }
 
     public function donate(Request $request) {
-        $validated = $request->validate([
-            'amount' => 'required|numeric',
-        ]);
         $student = $request->session()->get('student', function () use($request) {
             Student::find($request->input('studentId'));
         });
@@ -152,7 +149,7 @@ class RegistrationController extends Controller
             abort(404);
         }
         $willDonate = $request->input('will-donate');
-        $amount = $request->input('amount');
+        $amount = preg_replace('/[^\d.]/', '', $request->input('amount')) ?: 0;
         if ($willDonate == 'yes' && $amount > 0) {
             return view('web.public.payment', [
                 'student' => $student,
