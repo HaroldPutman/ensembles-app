@@ -12,7 +12,12 @@
         @if ($course->duration > 1)
         <p class="mt-6 text-lg leading-8">
           This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
-          It is open to students {{ strtolower($course->age_range) }}. The cost is ${{ $course->price }}.
+          It is open to students {{ strtolower($course->age_range) }}.
+          @if ($course->donation)
+            There is no charge for this class.
+          @else
+            The cost is ${{ $course->price }}.
+          @endif
         </p>
         @else
         <p class="mt-6 text-lg leading-8">
