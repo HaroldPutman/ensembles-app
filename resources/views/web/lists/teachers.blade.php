@@ -17,9 +17,9 @@
       <div class="flex-auto">
         <h2 class="text-xl sm:text-2xl">{{ $teacher->name }}</h2>
         <p class="text-gray-dark">{{ $teacher->specialty }}</p>
-        <p class="my-2">
-            {{ $teacher->bio }}
-        </p>
+        <div class="my-2 markdown-body">
+            {!! Str::markdown($teacher->bio) !!}
+        </div>
       </div>
     </article>
     @endforeach
