@@ -28,8 +28,14 @@ class RegistrationController extends Controller
             ]);
         }
         $student->courses()->attach($course->id, ['payment' => $payment]);
+        // Mark the course full if it is.
+        if ($course->size_max && $course->students()->count() >= $course->size_max) {
+            $course->status = 'full';
+            $course->save();
+        }
         return view('web.public.thankyou')->with('transactionId', $payment);
     }
+
     /**
      * Called when registration payment is complete.
      * @param Request $request The request with these values:
@@ -116,6 +122,14 @@ class RegistrationController extends Controller
         ])->first();
         if ($already) {
             return view('web.public.already', [
+                'student' => $student,
+                'course' => $course,
+            ]);
+        }
+        // Test for full class. This should be an edge case.
+        $count = $course->students()->count();
+        if ($course->size_max && $count >= $course->size_max) {
+            return view('web.public.full', [
                 'student' => $student,
                 'course' => $course,
             ]);
