@@ -10,7 +10,7 @@
             Ensembles typically runs six week sessions of group lessons. The next
             session will begin
             <em class="font-bold">February 26, 2024</em> and registration opens
-            Jan 26. See the <a href="./document/ensembles-2024-clendar.pdf">complete 2024 schedule</a>.
+            Jan 26. See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024 schedule</a>.
             The cost of the six-week session is $75 per student. Scholarships
             are available.
         </p>
