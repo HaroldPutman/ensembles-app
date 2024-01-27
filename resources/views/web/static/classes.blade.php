@@ -9,15 +9,17 @@
         <p class="mt-6 text-lg">
             Ensembles typically runs six week sessions of group lessons. The next
             session will begin
-            <em class="font-bold">February 26, 2024</em> and registration opens
-            Jan 26. See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024 schedule</a>.
+            <em class="font-bold">February 26, 2024</em> and registration is now open.
+            See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024 calendar</a>.
             The cost of the six-week session is $75 per student. Scholarships
             are available.
         </p>
-        <p class="mt-4 mb-6 text-lg">
+        <p class="mt-4 text-lg">
             All classes are held at Ensembles, 1120 Monroe St. (Across the street from
             the Charlestown High School tennis courts.)
         </p>
+        <p class="mt-4 mb-6 text-sm"><span class="font-bold">More to come.</span> If you don't see a class you are looking for, check
+        back later, our next session is still taking shape.</p>
     </header>
     <div>
 
