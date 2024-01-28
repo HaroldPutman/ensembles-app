@@ -57,7 +57,7 @@
                     Charlestown Indiana and
                     surrounding areas regardless of age,
                     skill level, background or financial means. We offer affordable group lessons so everyone
-                    can experience the joy and lifelong value of music.
+                    can experience the joy and lifelong value of music and art.
                 </p>
             </div>
         </article>
