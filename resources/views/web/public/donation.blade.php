@@ -11,7 +11,7 @@
         </p>
         <p class="mt-2 text-lg">
             There is no charge for this group, but your donation will help us continue to provide
-            music education to the community.
+            music and art education to the community.
         </p>
     </header>
     <article class="mx-auto max-w-2xl md:text-center px-2">
