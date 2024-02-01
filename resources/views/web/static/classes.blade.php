@@ -7,9 +7,9 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            Ensembles typically runs six week sessions of group lessons. The next
-            session will begin
-            <em class="font-bold">February 26, 2024</em> and registration is now open.
+            Ensembles typically runs six week sessions of group lessons. To accommodate GCCS spring break,
+            this session is split into two three week parts <span class="font-bold">Februrary 26 - March 16</span> ,
+            and <span class="font-bold">April 1 - April 20</span> with <span class="font-bold">no classes March 17 - March 30</span>.
             See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024 calendar</a>.
             The cost of the six-week session is $75 per student. Scholarships
             are available.
