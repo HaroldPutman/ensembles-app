@@ -29,7 +29,7 @@
         <article class="mx-auto w-full my-2">
             <div class="mx-8">
                 <h2 class="mt-4 text-xl font-bold tracking-tight text-gray">Deanne Moore Art Gallery</h2>
-                <p>The Deanne Moore Art Gallery will kick off our third art show <i class="italic">An Apple for the teacher</i> Oct 28 - Nov 18, 2023.
+                <p>The Deanne Moore Art Gallery is proud to host exhibitions including the works of local artists.</p>
             </div>
         </article>
     </div>
