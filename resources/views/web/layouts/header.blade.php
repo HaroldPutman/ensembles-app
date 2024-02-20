@@ -190,6 +190,10 @@
         </div>
         <div class="mt-6">
           <nav class="grid gap-y-8">
+            <a href="/" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
+                <span class="ml-3 text-base font-medium text-gray-dark">Ensembles Home</span>
+              </a>
+
             <a href="/mission" class="-m-3 flex items-center rounded-md p-3 hover:bg-gray-mist">
               <span class="ml-3 text-base font-medium text-gray-dark">About</span>
             </a>
