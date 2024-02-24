@@ -52,7 +52,7 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student birthdate <small class="text-xs">(enter like 3/21/1974)</small></label>
-                    <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" required pattern="\d{1,2}/\d{1,2}/\d{4}">
+                    <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" required pattern="(0[1-9]|1[12])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}">
                 </div>
             </div>
             <div>
@@ -179,6 +179,24 @@ LEGAL) !!}
         const diff = refDay - birthdate;
         const age = Math.floor(diff / 31557600000);
         document.querySelector('input[name="age"]').value = age;
+    });
+    const parseDate = /^(0?[1-9]|1[12])([ .\/-]?)(0?[1-9]|[12][0-9]|3[01])\2((?:19|20)?\d\d)$/;
+    birthdate.addEventListener('blur', (evt) => {
+        const parsed = parseDate.exec(evt.target.value);
+        if (parsed) {
+            const mm = ("0"+parsed[1]).slice(-2);
+            const dd = ("0" + parsed[3]).slice(-2);
+            let year = parseInt(parsed[4]);
+            if (year < 100) {
+                year += 1900;
+                const thisYear = (new Date()).getFullYear();
+                // assume two digit year is within past 100 years.
+                if (thisYear - year >= 100) {
+                    year += 100
+                }
+            }
+            evt.target.value = `${mm}/${dd}/${year}`;
+        }
     });
     const continueBtn = document.getElementById('continue');
     const agree = document.getElementById('agree');
