@@ -45,104 +45,59 @@
             <div>
                 <label for="student_firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student name</label>
                 <div class="grid grid-cols-2 gap-4">
-                    <input type="text" id="student_firstname" name="student_firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Student First Name" required>
-                    <input type="text" id="student_lastname" name="student_lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Student Last Name" required>
+                    <input type="text" id="student_firstname" name="student_firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Student First Name" value="{{old('student_firstname')}}" required>
+                    <input type="text" id="student_lastname" name="student_lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Student Last Name" value="{{old('student_lastname')}}" required>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student birthdate <small class="text-xs">(enter like 3/21/1974)</small></label>
-                    <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" required pattern="\d{1,2}/\d{1,2}/\d{4}">
+                    <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" value="{{old('birthdate')}}" required pattern="(0[1-9]|1[12])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}">
                 </div>
             </div>
             <div>
                 <label for="firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name <small class="text-xs">(enter it again if you are the student)</small></label>
                 <div class="grid grid-cols-2 gap-4">
-                    <input type="text" id="firstname" name="firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="First Name" required>
-                    <input type="text" id="lastname" name="lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Last Name" required>
+                    <input type="text" id="firstname" name="firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="First Name" value="{{old('firstname')}}" required>
+                    <input type="text" id="lastname" name="lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Last Name" value="{{old('lastname')}}" required>
                 </div>
             </div>
             <div>
                 <label for="email" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your email</label>
-                <input type="email" id="email" name="email" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mail@example.com" required>
+                <input type="email" id="email" name="email" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mail@example.com" value="{{old('email')}}" required>
             </div>
             <div>
                 <label for="address" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your address</label>
-                <textarea id="address" name="address" rows="2" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="street address"></textarea>
+                <textarea id="address" name="address" rows="2" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="street address">{{old('address')}}</textarea>
             </div>
             <div class="grid grid-cols-4 gap-4">
             <div class="md:col-span-2 col-span-4">
                 <label for="city" class="block mb-1 text-left text-sm font-medium text-gray-dark">City</label>
-                <input type="text" id="city" name="city" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="city" required>
+                <input type="text" id="city" name="city" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="city" value="{{old('city')}}" required>
             </div>
             <div class="md:col-span-1 col-span-2">
                 <label for="state" class="block mb-1 text-left text-sm font-medium text-gray-dark">State</label>
+                @php
+                    $selectedState = old('state') ? old('state') : 'IN';
+                @endphp
                 <select id="state" name="state" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" required>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN" selected>Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
+                    @foreach ( App\Helpers\UnitedStatesHelper\listUnitedStates() as $st => $state)
+                        <option value="{{ $st }}" @selected($st == $selectedState)>{{ $state }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="md:col-span-1 col-span-2">
                 <label for="zip" class="block mb-1 text-left text-sm font-medium text-gray-dark">ZIP code</label>
-                <input type="text" id="zip" name="zip" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="ZIP code" required>
+                <input type="text" id="zip" name="zip" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="ZIP code" value="{{old('zip')}}" required>
             </div>
             </div>
             <div>
                 <label for="phone" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your phone</label>
-                <input type="text" id="phone" name="phone" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="000-000-0000" required pattern=".*\d{3}.*\d{3}.*\d{4}\s*">
+                <input type="text" id="phone" name="phone" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="000-000-0000" value="{{old('phone')}}" required pattern=".*\d{3}.*\d{3}.*\d{4}\s*">
             </div>
             <div>
                 <label for="note" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student allergies, health concerns, etc...</label>
-                <textarea id="note" name="note" rows="2" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="Anything we should know about the student..."></textarea>
+                <textarea id="note" name="note" rows="2" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="Anything we should know about the student...">{{old('note')}}</textarea>
             </div>
             <div class="markdown-body">
                 {!! Str::markdown(<<<'LEGAL'
@@ -179,6 +134,24 @@ LEGAL) !!}
         const diff = refDay - birthdate;
         const age = Math.floor(diff / 31557600000);
         document.querySelector('input[name="age"]').value = age;
+    });
+    const parseDate = /^(0?[1-9]|1[12])([ .\/-]?)(0?[1-9]|[12][0-9]|3[01])\2((?:19|20)?\d\d)$/;
+    birthdate.addEventListener('blur', (evt) => {
+        const parsed = parseDate.exec(evt.target.value);
+        if (parsed) {
+            const mm = ("0"+parsed[1]).slice(-2);
+            const dd = ("0" + parsed[3]).slice(-2);
+            let year = parseInt(parsed[4]);
+            if (year < 100) {
+                year += 1900;
+                const thisYear = (new Date()).getFullYear();
+                // assume two digit year is within past 100 years.
+                if (thisYear - year >= 100) {
+                    year += 100
+                }
+            }
+            evt.target.value = `${mm}/${dd}/${year}`;
+        }
     });
     const continueBtn = document.getElementById('continue');
     const agree = document.getElementById('agree');
