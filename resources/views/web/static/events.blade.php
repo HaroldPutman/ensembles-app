@@ -17,7 +17,7 @@
         <article class="md:w-3/4 mx-auto border-2 drop-shadow-sm border-gray-mist px-4 py-2 mb-6">
             <h2 class="text-2xl">{{ $event->name }}</h2>
             <p class="text-gray">{{ $event->start->format('l, F j \a\t g:i A') }} - {{ $event->end->format('g:i A') }}</p>
-            <div class="markdown-body">{{!! Str::markdown($event->description) }}</div>
+            <div class="markdown-body">{!! Str::markdown($event->description) }</div>
             @if ($event->course_id)
             <p class="flex justify-end">
                 <a href="{{ '/register/' . $event->course_id }}" title="Register for {{ $event->name }}"
