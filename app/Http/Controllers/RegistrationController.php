@@ -110,8 +110,11 @@ class RegistrationController extends Controller
         }
         $ageMin = $course->age_min ?: 0;
         $ageMax = $course->age_max ?: 99;
+        // Adjust the age range to allow students to be +/- 1 year on the first day of class.
+        $ageMinAdjusted = $ageMin > 2 ? $ageMin - 1 : $ageMin;
+        $ageMaxAdjusted = $ageMax < 99 ? $ageMax + 1 : $ageMax;
         $request->validate([
-            'age' => 'required|numeric|min:' . $ageMin . '|max:' . $ageMax,
+            'age' => 'required|numeric|min:' . $ageMinAdjusted . '|max:' . $ageMaxAdjusted,
         ], [
             'age.min' => 'The student must be at least ' . $ageMin . ' years old on the first day of class.',
             'age.max' => 'The student must be no more than ' . $ageMax . ' years old on the first day of class.',
