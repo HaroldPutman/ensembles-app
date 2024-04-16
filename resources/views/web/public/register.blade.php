@@ -52,7 +52,7 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student birthdate <small class="text-xs">(enter like 3/21/1974)</small></label>
-                    <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" value="{{old('birthdate')}}" required pattern="(0[1-9]|1[12])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}">
+                    <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" value="{{old('birthdate')}}" required pattern="(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}">
                 </div>
             </div>
             <div>
