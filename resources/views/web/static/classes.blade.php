@@ -7,11 +7,9 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            Ensembles typically runs six week sessions of group lessons. The next session runs from
-            <span class="font-bold">April 22 - June 1</span> ,
-            See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024 calendar</a>.
-            The cost of the six-week session is $75 per student. Scholarships
-            are available.
+            Our summer session wil run from <span class="font-bold">June 10 - July 20</span>.
+            This will be a "camp" season with classes running Monday through Friday rather than
+            once a week. Costs vary per class. Scholarships are available.
         </p>
         <p class="mt-4 text-lg">
             All classes are held at Ensembles, 1120 Monroe St. (Across the street from
@@ -28,6 +26,8 @@
             <p class="text-gray">
                 @if ($course->duration == 1)
                     {{ $course->start->format('l M d') }} at {{ $course->start->format('g:i A') }}
+                @elseif ($course->duration == 5)
+                    {{ $course->start->format('l M d') }} to {{ $course->end->format('l M d') }} daily {{ $course->start->format('g:i A') }} - {{ $course->end->format('g:i A') }}
                 @else
                     {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}
                 @endif
