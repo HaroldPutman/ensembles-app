@@ -10,7 +10,8 @@ class Course extends Model
 {
     use HasFactory;
     protected $casts = [
-        'start' => 'datetime'
+        'start' => 'datetime',
+        'end' => 'datetime',
     ];
 
     public function students(): BelongsToMany
