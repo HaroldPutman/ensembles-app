@@ -11,7 +11,7 @@
         </p>
         @if ($course->duration > 1)
         <p class="mt-6 text-lg leading-8">
-          @if ($course->duration === 5)
+          @if ($course->duration == 5)
             This class meets daily {{ $course->start->format('M d') }} through {{ $course->end->format('M d') }} from {{ $course->start->format('g:i A') }} to {{ $course->end->format('g:i A') }}.
           @else
             This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
