@@ -130,34 +130,51 @@ LEGAL) !!}
     </article>
 </section>
 <script>
-    const age = document.querySelector('input[name="age"]');
-    const birthdate = document.getElementById('birthdate');
-    birthdate.addEventListener('change', function() {
-        const birthdate = new Date(this.value);
+    const ageInput = document.querySelector('input[name="age"]');
+    const birthdateInput = document.getElementById('birthdate');
+
+    function calculateAge(birthdate) {
         const refDay = new Date('{{ strtolower($course->start->format('Y-m-d')) }}');
         const diff = refDay - birthdate;
-        const age = Math.floor(diff / 31557600000);
-        document.querySelector('input[name="age"]').value = age;
-    });
-    const parseDate = /^(0?[1-9]|1[12])([ .\/-]?)(0?[1-9]|[12][0-9]|3[01])\2((?:19|20)?\d\d)$/;
-    birthdate.addEventListener('blur', (evt) => {
-        const parsed = parseDate.exec(evt.target.value);
-        if (parsed) {
-            const mm = ("0"+parsed[1]).slice(-2);
-            const dd = ("0" + parsed[3]).slice(-2);
-            let year = parseInt(parsed[4]);
-            if (year < 100) {
-                year += 1900;
-                const thisYear = (new Date()).getFullYear();
-                // assume two digit year is within past 100 years.
-                if (thisYear - year >= 100) {
-                    year += 100
-                }
-            }
-            evt.target.value = `${mm}/${dd}/${year}`;
+        return Math.floor(diff / 31557600000);
+    }
+
+    function validBirthdate(birthdate) {
+        const parseDate = /^(0?[1-9]|1[12])([ .\/-]?)(0?[1-9]|[12][0-9]|3[01])\2((?:19|20)?\d\d)$/;
+        const parsed = parseDate.exec(birthdateInput.value);
+        if (!parsed) {
+            return null;
         }
+        const mm = ("0"+parsed[1]).slice(-2);
+        const dd = ("0" + parsed[3]).slice(-2);
+        let year = parseInt(parsed[4]);
+        if (year < 100) {
+            year += 1900;
+            const thisYear = (new Date()).getFullYear();
+            // assume two digit year is within past 100 years.
+            if (thisYear - year >= 100) {
+                year += 100
+            }
+        }
+        return new Date(`${year}-${mm}-${dd}T00:00:00`);
+    }
+
+    birthdateInput.addEventListener('blur', (evt) => {
+        const birthdate = validBirthdate(evt.target.value);
+        ageInput.value = calculateAge(birthdate);
+        evt.target.value = birthdate.toLocaleDateString('en-US');
     });
+
     const continueBtn = document.getElementById('continue');
+    continueBtn.addEventListener('click', function(evt) {
+        evt.preventDefault();
+        this.disabled = true;
+        const birthdate = validBirthdate(evt.target.value);
+        ageInput.value = calculateAge(birthdate);
+        this.innerHTML = 'Processing...';
+        this.form.submit();
+    });
+
     const agree = document.getElementById('agree');
     continueBtn.disabled = !agree.checked;
     agree.addEventListener('change', function() {
