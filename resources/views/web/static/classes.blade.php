@@ -7,9 +7,9 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            Our summer session wil run from <span class="font-bold">June 3 - July 20</span>.
-            This will be a "camp" season with most classes running Monday through Friday rather than
-            once a week. Costs vary per class. Scholarships are available.
+            Ensembles typically runs six week sessions of group lessons. The next session runs from
+            <span class="font-bold">July 15 - Aug 31</span> ,
+            See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024
         </p>
         <p class="mt-4 text-lg">
             All classes are held at Ensembles, 1120 Monroe St. (Across the street from
