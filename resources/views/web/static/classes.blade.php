@@ -9,7 +9,10 @@
         <p class="mt-6 text-lg">
             Ensembles typically runs six week sessions of group lessons. The next session runs from
             <span class="font-bold">July 15 - Aug 31</span> ,
-            See the <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">complete 2024
+            See the
+            <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">
+                complete 2024 schedule
+            </a>.
         </p>
         <p class="mt-4 text-lg">
             All classes are held at Ensembles, 1120 Monroe St. (Across the street from
