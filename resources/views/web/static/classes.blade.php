@@ -8,7 +8,7 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
             Ensembles typically runs six week sessions of group lessons. The next session runs from
-            <span class="font-bold">July 15 - Aug 31</span> ,
+            <span class="font-bold">Aug 26 - Oct 5</span> ,
             See the
             <a class="hover:underline text-primary-dark" href="./document/ensembles-2024-calendar.pdf">
                 complete 2024 schedule
