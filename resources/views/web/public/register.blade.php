@@ -140,7 +140,7 @@ LEGAL) !!}
     }
 
     function validBirthdate(birthdate) {
-        const parseDate = /^(0?[1-9]|1[12])([ .\/-]?)(0?[1-9]|[12][0-9]|3[01])\2((?:19|20)?\d\d)$/;
+        const parseDate = /^(0?[1-9]|1[012])([ .\/-]?)(0?[1-9]|[12][0-9]|3[01])\2((?:19|20)?\d\d)$/;
         const parsed = parseDate.exec(birthdateInput.value);
         if (!parsed) {
             return null;
