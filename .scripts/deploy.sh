@@ -5,6 +5,9 @@ set -e
 
 echo "Deployment started ..."
 
+## Attempt to avoid build failures due to running out of memory (https://github.com/vitejs/vite/issues/2433)
+export NODE_OPTIONS=--max-old-space-size=32768
+
 # Enter maintenance mode or return true
 # if already is in maintenance mode
 (php artisan down) || true
