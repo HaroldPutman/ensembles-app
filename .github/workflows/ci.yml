@@ -1,6 +1,7 @@
 name: CI
 
-on: workflow_dispatch
+on:
+  workflow_dispatch
 
 jobs:
   build:
@@ -19,7 +20,7 @@ jobs:
     - name: Deploy with rsync
       uses: burnett01/rsync-deployments@7.0.1
       with:
-        switches: -avzr --delete
+        switches: -avzr --delete --exclude-from=.rsyncignore
         path: ./
         remote_path: /home/charle41/tst001
         remote_host: ${{ secrets.HOST }}
