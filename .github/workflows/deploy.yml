@@ -1,10 +1,6 @@
 name: Deploy
 
-# Trigger the workflow when merging to main branch
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 # Authenticate to the the server via ssh
 # and run our deployment script
