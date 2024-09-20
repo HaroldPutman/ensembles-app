@@ -22,7 +22,7 @@ jobs:
       with:
         switches: -avzr --delete --exclude-from=.rsyncignore
         path: ./
-        remote_path: /home/charle41/tst001
+        remote_path: /home/charle41/b${{ github.run_number }}
         remote_host: ${{ secrets.HOST }}
         remote_user: ${{ secrets.USERNAME }}
         remote_port: ${{ secrets.PORT }}
