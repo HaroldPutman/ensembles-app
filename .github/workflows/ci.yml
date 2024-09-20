@@ -28,7 +28,7 @@ jobs:
         remote_port: ${{ secrets.PORT }}
         remote_key: ${{ secrets.SSHKEY }}
 
-    - name: Publish on the server
+    - name: Activate on the server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Stop on the first sign of an error
 set -e
 
 # Based on https://www.toptal.com/laravel/laravel-zero-downtime-deployment
