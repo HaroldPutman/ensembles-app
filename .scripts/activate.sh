@@ -25,5 +25,9 @@ php artisan route:cache
 php artisan view:clear
 php artisan config:cache
 
+printf '%s\n' "${PWD##*/}" > public/version.txt
+
+# Point the server to the new files
+rm -f /home/charle41/public_html && ln -sf $PWD/public /home/charle41/public_html
 
 echo "Activation complete."
