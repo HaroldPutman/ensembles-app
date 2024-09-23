@@ -100,7 +100,7 @@
     </div>
 </section>
 <section class="sm:flex gap-4 my-6">
-  <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-jenn-winans.jpg">
+  <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-jenn.jpg">
   <div class="flex-auto">
     <h2 class="text-xl sm:text-2xl">Jenn Winans</h2>
     <p class="text-gray-dark">Director</p>
