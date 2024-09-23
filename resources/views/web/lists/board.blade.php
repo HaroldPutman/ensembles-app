@@ -59,22 +59,16 @@
   </div>
 </section>
 <section class="sm:flex gap-4 my-6">
-  <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-marissa.jpg">
-  <div class="flex-auto">
-    <h2 class="text-xl sm:text-2xl">Marissa Knoebel</h2>
-    <p class="text-gray-dark">Director</p>
-    <p class="my-1">
-      Marissa is a lifelong resident of Charlestown and has spent the past few years as the Director of Parks
-      for the City of Charlestown. Growing up, she attended many Band, Choir, and Theater performances watching
-      her cousins, friends, and fellow community members bring their talents alive. Supporting the mission of
-      Ensembles is something she takes great pride in and is really excited to see just how far this mission
-      will take us. Marissa graduated from the University of Indiana with a degree in Communication and a minor
-      in Sociology. In her free time, she enjoys spending time with her Border Collie Izzy and attending Nashville
-      Predators hockey games with her boyfriend Anthony.
-    </p>
-  </div>
-</section>
-<section class="sm:flex gap-4 my-6">
+    <img class="flex-none px-2 h-32 mt-2 mb-1" src="/image/people/profile-picture.png">
+    <div class="flex-auto">
+      <h2 class="text-xl sm:text-2xl">Winnie Green</h2>
+      <p class="text-gray-dark">Director</p>
+      <p  class="my-2">
+        (Bio coming soon)
+      </p>
+    </div>
+  </section>
+  <section class="sm:flex gap-4 my-6">
   <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-harold.jpg">
 
   <div class="flex-auto">
@@ -106,23 +100,35 @@
     </div>
 </section>
 <section class="sm:flex gap-4 my-6">
-  <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-joann.jpg">
+  <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-jenn-winans.jpg">
   <div class="flex-auto">
-    <h2 class="text-xl sm:text-2xl">Joann Talley</h2>
+    <h2 class="text-xl sm:text-2xl">Jenn Winans</h2>
     <p class="text-gray-dark">Director</p>
     <p class="my-2">
-      Joann is an active practitioner, educator and advocate of music. She currently serves as the Charlestown
-      Middle and Charlestown High School Director of bands, where she has been since 2017. Prior to this, Joann
-      was a high school band director in Baltimore, Maryland for 11 years. She holds a Bachelors of Arts in Music
-      Education from University of Delaware and a Masters of Arts in Music Education from Peabody Institute of
-      Johns Hopkins. Joann’s passion is sharing music with young people through performance in band. Her focus is
-      student-centered and she believes that all humans possess the ability to create and share beauty through
-      music.
-    </p>
-    <p class="my-2">
-      Joann is thrilled to support Ensembles in their efforts to share the beauty of music with ALL.
+        Jennifer Winans has lived in Clark County Indiana for over 25 years and has a son who
+        graduated from Charlestown High School. Jennifer brings a wealth of knowledge and
+        experience that could greatly benefit Charlestown Ensembles, particularly in integrating music
+        and healing. Her background as a board-certified Family Nurse Practitioner and her expertise in
+        music therapy position her uniquely to connect healthcare and the arts.
     </p>
   </div>
 </section>
+<section class="sm:flex gap-4 my-6">
+    <img class="flex-none w-32 h-32 mt-2 mb-1" src="/image/people/profile-ken.jpg">
+    <div class="flex-auto">
+      <h2 class="text-xl sm:text-2xl">Ken Winans</h2>
+      <p class="text-gray-dark">Director</p>
+      <p class="my-1">
+          Kenneth Winans has been a resident of Clark County Indiana for over 20 years and has a son
+          who graduated from Charlestown high school. Ken has a rich and diverse background in both
+          music and community service. His experience as a certified cardiovascular technician, combined
+          with over 40 years in the music industry, gives him a unique perspective that can greatly benefit
+          organizations like Charlestown Ensembles. His passion for providing opportunities for
+          disadvantaged youth through music is commendable and shows his commitment to giving back
+          to the community. Ken was a board member of a nonprofit organization in Arkansas for several
+          years overseeing community education and organizing events.
+      </p>
+    </div>
+  </section>
 </article>
 @stop
