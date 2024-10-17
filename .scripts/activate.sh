@@ -19,11 +19,10 @@ ln -sf $BASE_DIR/storage ./
 php artisan migrate --no-interaction --force
 
 # Run optimization commands for laravel
-php artisan optimize
-php artisan cache:clear
-php artisan route:cache
-php artisan view:clear
+# Based on https://laravel.com/docs/10.x/deployment#optimization
 php artisan config:cache
+php artisan route:cache
+php artisan view:cache
 
 printf '%s\n' "${PWD##*/}" > public/version.txt
 

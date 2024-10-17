@@ -18,7 +18,7 @@ class PayPalController extends Controller
         $cart = $requestBody['cart'];
 
         $response = Http::withToken($token)->post(
-            env('PAYPAL_API'). '/v2/checkout/orders', [
+            config('paypal.apiUrl'). '/v2/checkout/orders', [
                 'intent' => 'CAPTURE',
                 'purchase_units' => [[
                         'amount' => [
@@ -53,7 +53,7 @@ class PayPalController extends Controller
     public function capturePayment(Request $request) {
         $token = $this->generateAccessToken();
         $payPalResponse = Http::withToken($token)->post(
-            env('PAYPAL_API') . '/v2/checkout/orders/' .$request->input('orderID') . '/capture',
+            config('paypal.apiUrl') . '/v2/checkout/orders/' .$request->input('orderID') . '/capture',
             ['json' => []]);
         if (!$payPalResponse->clientError()) {
             // Client errors have information about card processing failure, so
@@ -65,9 +65,9 @@ class PayPalController extends Controller
 
     public function generateAccessToken() {
 
-        $response = Http::withBasicAuth(env('PAYPAL_CLIENT_ID'), env('PAYPAL_CLIENT_SECRET'))
+        $response = Http::withBasicAuth(config('paypal.clientId'), config('paypal.clientSecret'))
             ->asForm()
-            ->post(env('PAYPAL_API') . '/v1/oauth2/token' , [
+            ->post(config('paypal.apiUrl') . '/v1/oauth2/token' , [
                 'grant_type' => 'client_credentials'
             ]);
         $response->throw(); // Throw exeception if there is an error
