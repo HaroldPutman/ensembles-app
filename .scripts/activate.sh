@@ -20,6 +20,7 @@ php artisan migrate --no-interaction --force
 
 # Run optimization commands for laravel
 # Based on https://laravel.com/docs/10.x/deployment#optimization
+php artisan cache:clear
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
