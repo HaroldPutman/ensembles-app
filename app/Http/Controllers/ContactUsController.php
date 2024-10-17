@@ -21,13 +21,13 @@ class ContactUsController extends Controller {
             'message' => $request->message,
             'context' => $request->context
         ];
+        $emailTo = config('ensembles.contact.email');
         try {
-            Mail::to(env('ENSEMBLES_CONTACT'))->send(new ContactRequest($inquiry));
+            Mail::to($emailTo)->send(new ContactRequest($inquiry));
             return back()->with('success', __('Your message has been sent.'));
         } catch(\Exception $e) {
             Log::error("Exception {$e->getMessage()}");
-            $email = env('ENSEMBLES_CONTACT');
-            return back()->with('error', "There was a problem sending your message. Instead, try sending an email to <a href=\"mailto:$email\">$email</a>.");
+            return back()->with('error', "There was a problem sending your message. Instead, try sending an email to <a href=\"mailto:$emailTo\">$emailTo</a>.");
         }
     }
 

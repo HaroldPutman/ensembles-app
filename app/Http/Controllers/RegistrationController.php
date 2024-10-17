@@ -148,7 +148,7 @@ class RegistrationController extends Controller
                 'student' => $student,
                 'course' => $course,
                 'amount' => $course->price,
-                'clientId' => env('PAYPAL_CLIENT_ID'),
+                'clientId' => config('paypal.clientId'),
             ]);
     }
 
@@ -172,7 +172,7 @@ class RegistrationController extends Controller
                 'student' => $student,
                 'course' => $course,
                 'amount' => $amount,
-                'clientId' => env('PAYPAL_CLIENT_ID'),
+                'clientId' => config('paypal.clientId'),
             ]);
         }
         return $this->registerStudent($student, $course, 'DONATION $0');
@@ -199,7 +199,7 @@ class RegistrationController extends Controller
             'failure' => $failure,
             'student' => $student,
             'course' => $course,
-            'clientId' => env('PAYPAL_CLIENT_ID'),
+            'clientId' => config('paypal.clientId'),
         ]);
     }
 }
