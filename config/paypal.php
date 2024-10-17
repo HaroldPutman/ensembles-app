@@ -1,3 +1,5 @@
+<?php
+
 return [
     'apiUrl' => env('PAYPAL_API'),
     'clientId' => env('PAYPAL_CLIENT_ID'),
