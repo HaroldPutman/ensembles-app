@@ -62,6 +62,10 @@ class RegistrationController extends Controller
         if (!$course || $course->status != 'open') {
             abort(404);
         }
+        // If the course has an alternate registration URL, redirect to it.
+        if ($course->alt_url) {
+            return redirect($course->alt_url);
+        }
         return view("web.public.register", compact('course'));
     }
 
