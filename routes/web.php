@@ -30,7 +30,7 @@ Route::get('/board', function() {
 
 Route::get('/classes', function() {
     return view('web.static.classes', [
-        'courses' => Course::whereDate('start', '>=', date('Y-m-d'))->orderBy('start')->get(),
+        'courses' => Course::whereDate('start', '>=', '2024-10-13')->orderBy('start')->get(),
     ]);
 });
 
