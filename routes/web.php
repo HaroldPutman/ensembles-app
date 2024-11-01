@@ -84,7 +84,7 @@ Route::controller(ContactUsController::class)->group(function () {
 });
 
 Route::controller(RegistrationController::class)->group(function () {
-    Route::get('register/{classId}', 'register');
+    Route::get('register/{classId}', 'register')->name('register');
     Route::post('register/donate', 'donate')->name('register-donate');
     Route::post('register/create', 'create')->name('register-create');
     Route::post('register/thankyou', 'thankyou')->name('register-thankyou');
