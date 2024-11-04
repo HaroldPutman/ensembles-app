@@ -30,6 +30,8 @@
                     {{ $course->start->format('l M d') }} at {{ $course->start->format('g:i A') }}
                 @elseif ($course->duration == 5)
                     {{ $course->start->format('l M d') }} to {{ $course->end->format('l M d') }} daily {{ $course->start->format('g:i A') }} - {{ $course->end->format('g:i A') }}
+                @elseif ($course->duration == 99)
++                   {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }} (Open Enrollment)
                 @else
                     {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}
                 @endif
