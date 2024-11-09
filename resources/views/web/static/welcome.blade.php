@@ -5,23 +5,16 @@
 @section('content')
     <div class="w-full">
         <article class="relative bg-cover bg-center py-16 md:py-32 px-2"
-            style="background-image:url({{ asset('image/fantasia.jpg') }});">
+            style="background-image:url({{ asset('image/building-snow.jpg') }});">
             <div class="absolute top-0 right-0 bottom-0 left-0 bg-gray-dark opacity-70"></div>
             <div class="relative text-center">
                 <h2
                     class="text-4xl text-amber tracking-tight leading-10 font-medium sm:text-5xl sm:leading-none md:text-6xl">
-                    Parents Night Out</h2>
+                    Celebrate Music and Art</h2>
                 <p class="mt-3 text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5">
-                    Friday Nov 15, 6-9PM drop off your 5-11 yr olds for a night of fun, magic, music and art activities. $25/student.
+                    In this season we are thankful to be able to share music and art with the Charlestown community.
+                    Come find your place in our classes or performance groups.
                 </p>
-                <a href="{{ route('register', ['classId' => 152]) }}"
-                    aria-label="Register for Parents Night Out event"
-                    class="mt-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">
-                    <span>Register now</span>
-                    <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
             </div>
         </article>
         <article class="relative bg-black pt-8 pb-32 px-4">
