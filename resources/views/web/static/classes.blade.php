@@ -7,10 +7,9 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            This session is a special 3 week holiday session beginning
-            <em class="font-bold">December 2, 2024</em> and registration opens
-            Nov 2.
-            The cost of the three-week holiday session is $45 per student. Scholarships
+            Ensembles typically runs six week sessions of group lessons. The next session runs from
+            <em class="font-bold">January 13 through February 22</em>.
+            The cost of the six-week session is $75 per student. Scholarships
             are available.
         </p>
         <p class="mt-4 text-lg">
