@@ -14,10 +14,10 @@
           @if ($course->duration == 5)
             This class meets daily {{ $course->start->format('M d') }} through {{ $course->end->format('M d') }} from {{ $course->start->format('g:i A') }} to {{ $course->end->format('g:i A') }}.
           @elseif ($course->duration == 99)
-            This is an open enrollment group that meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }}.
+            This is an open enrollment group that meets {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }}.
             You may join at any time during the year.
           @else
-            This class meets {{ strtolower($course->start->format('l')) }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
+            This class meets {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
           @endif
           It is open to students {{ strtolower($course->age_range) }}.
           @if ($course->donation)
