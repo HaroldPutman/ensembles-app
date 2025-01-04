@@ -31,7 +31,7 @@
           This event is on {{ $course->start->format('l, M d') }} at {{ $course->start->format('g:i A') }}.
           It is open to students {{ strtolower($course->age_range) }}.
           @if ($course->donation)
-            There is no charge for this class.
+            There is no charge for this event.
           @else
             The cost is ${{ $course->price }}.
           @endif
