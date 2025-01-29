@@ -23,7 +23,7 @@
                     class="text-4xl text-primary-light tracking-tight leading-10 font-medium sm:text-5xl sm:leading-none md:text-6xl">
                     Classes</h2>
                 <p class="mt-3 text-gray-mist sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5">
-                    Our next session of classes runs from January 13 through February 22.
+                    Our next session of classes runs from February 24 through April 5.
                 </p>
                 <a href="/classes"
                     class="mt-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">Learn
