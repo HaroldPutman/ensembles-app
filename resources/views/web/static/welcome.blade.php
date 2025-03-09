@@ -64,30 +64,46 @@
 
         <!-- Newsletter Modal Trigger Button -->
         <div class="text-center py-8 bg-white">
-            <button onclick="document.getElementById('newsletter-modal').classList.remove('hidden')"
+            <button onclick="document.getElementById('newsletter-modal').showModal()"
                     class="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">
                 Subscribe to Our Newsletter
             </button>
         </div>
 
         <!-- Newsletter Modal -->
-        <div id="newsletter-modal" class="hidden fixed inset-0 bg-gray-dark bg-opacity-50 overflow-y-auto h-full w-full z-50">
-            <div class="relative top-20 mx-auto p-5 border md:w-3/4 lg:w-1/3 shadow-lg rounded-md bg-white">
+        <dialog id="newsletter-modal" class="p-0 w-11/12 md:w-3/4 lg:w-5/12 rounded-md shadow-lg backdrop:bg-gray-dark backdrop:bg-opacity-50">
+            <div class="bg-white p-5">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-medium text-gray-dark">Subscribe to Our Newsletter</h3>
-                    <button onclick="document.getElementById('newsletter-modal').classList.add('hidden')"
+                    <button onclick="document.getElementById('newsletter-modal').close()"
                             class="text-gray-dark hover:text-gray-darker">
                         <span class="text-2xl">&times;</span>
                     </button>
                 </div>
                 <iframe src="https://cdn.forms-content.sg-form.com/767b7fcd-ff48-11ed-bf10-4609de055fa8"
                         class="w-full h-[600px]"
-                        frameborder="0"></iframe>
+                        frameborder="0"
+                        title="Newsletter Subscription Form"></iframe>
             </div>
-        </div>
+        </dialog>
 
         <!-- Newsletter Modal Auto-popup Script -->
         <script>
+            const modal = document.getElementById('newsletter-modal');
+
+            // Close modal when clicking on backdrop
+            modal.addEventListener('click', (e) => {
+                const dialogDimensions = modal.getBoundingClientRect();
+                if (
+                    e.clientX < dialogDimensions.left ||
+                    e.clientX > dialogDimensions.right ||
+                    e.clientY < dialogDimensions.top ||
+                    e.clientY > dialogDimensions.bottom
+                ) {
+                    modal.close();
+                }
+            });
+
             function setCookie(name, value, days) {
                 const date = new Date();
                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -102,9 +118,9 @@
 
             // Check if user has seen the modal before
             if (!getCookie('newsletter_modal_shown')) {
-                // Show modal after 30 seconds
+                // Show modal after 7 seconds
                 setTimeout(() => {
-                    document.getElementById('newsletter-modal').classList.remove('hidden');
+                    modal.showModal();
                     // Set cookie to expire in 21 days
                     setCookie('newsletter_modal_shown', 'true', 21);
                 }, 7000);
