@@ -62,17 +62,53 @@
             </div>
         </article>
 
-        <!-- BEGIN: Benchmark Email Signup Form Code -->
-        <script type="text/javascript" id="lbscript1747627"
-            src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMQZYdqouRN%252F77J25jqXIyRIHwpiX%252FxqOLO4YWH0MgPb58j9ybR%252Bnt%252Fk">
-        </script><noscript>Please enable JavaScript <br />
-            <div align="center"
-                style="padding-top:5px;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;"><a
-                    href="https://www.benchmarkemail.com/email-marketing?utm_source=usersignupforms&utm_medium=customers&utm_campaign=usersignupforms"
-                    target="_new"
-                    style="text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">Email
-                    Marketing </a> by Benchmark</div>
-        </noscript>
-        <!-- END: Benchmark Email Signup Form Code -->
+        <!-- Newsletter Modal Trigger Button -->
+        <div class="text-center py-8 bg-white">
+            <button onclick="document.getElementById('newsletter-modal').classList.remove('hidden')"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">
+                Subscribe to Our Newsletter
+            </button>
+        </div>
+
+        <!-- Newsletter Modal -->
+        <div id="newsletter-modal" class="hidden fixed inset-0 bg-gray-dark bg-opacity-50 overflow-y-auto h-full w-full z-50">
+            <div class="relative top-20 mx-auto p-5 border md:w-3/4 lg:w-1/3 shadow-lg rounded-md bg-white">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-medium text-gray-dark">Subscribe to Our Newsletter</h3>
+                    <button onclick="document.getElementById('newsletter-modal').classList.add('hidden')"
+                            class="text-gray-dark hover:text-gray-darker">
+                        <span class="text-2xl">&times;</span>
+                    </button>
+                </div>
+                <iframe src="https://cdn.forms-content.sg-form.com/767b7fcd-ff48-11ed-bf10-4609de055fa8"
+                        class="w-full h-[600px]"
+                        frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Newsletter Modal Auto-popup Script -->
+        <script>
+            function setCookie(name, value, days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
+            }
+
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            // Check if user has seen the modal before
+            if (!getCookie('newsletter_modal_shown')) {
+                // Show modal after 30 seconds
+                setTimeout(() => {
+                    document.getElementById('newsletter-modal').classList.remove('hidden');
+                    // Set cookie to expire in 30 days
+                    setCookie('newsletter_modal_shown', 'true', 10);
+                }, 7000);
+            }
+        </script>
     </div>
 @stop
