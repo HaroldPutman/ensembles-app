@@ -105,8 +105,8 @@
                 // Show modal after 30 seconds
                 setTimeout(() => {
                     document.getElementById('newsletter-modal').classList.remove('hidden');
-                    // Set cookie to expire in 30 days
-                    setCookie('newsletter_modal_shown', 'true', 10);
+                    // Set cookie to expire in 21 days
+                    setCookie('newsletter_modal_shown', 'true', 21);
                 }, 7000);
             }
         </script>
