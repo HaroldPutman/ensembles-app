@@ -8,7 +8,7 @@
 
     <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl text-center mb-4">Piano Camp</h1>
 
-<img src="{{ asset('image/hero/piano-camp.jpg') }}"
+<img src="{{ asset('image/hero/piano-camp.JPG') }}"
 alt="Piano Summer Camp"
 loading="eager">
     <div class="max-w-4xl mx-auto py-12 px-4">
