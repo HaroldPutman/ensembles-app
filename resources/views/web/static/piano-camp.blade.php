@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('title', 'Piano Camps')
+@section('title', 'Piano Camp')
 
 @section('content')
 
@@ -17,13 +17,13 @@ loading="eager">
             <!-- Ages 8-12 Button -->
             <a href="{{ route('register', ['classId' => 195]) }}"
                class="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">
-                <h3 class="text-xl font-bold mb-2">Ages 8-12</h3>
+                <span class="text-xl font-bold mb-2">Ages 8-12</span>
             </a>
 
             <!-- Ages 13-18 Button -->
             <a href="{{ route('register', ['classId' => 196]) }}"
                class="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-primary px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-dark">
-                <h3 class="text-xl font-bold mb-2">Ages 13-18</h3>
+                <span class="text-xl font-bold mb-2">Ages 13-18</span>
             </a>
         </div>
     </div>
