@@ -72,6 +72,12 @@ Route::get('/volunteer', function() {
     return view('web.static.volunteer');
 });
 
+Route::view('/piano-camp', 'web.static.piano-camp');
+
+Route::view('/music-camp', 'web.static.music-camp');
+
+Route::view('/art-camp', 'web.static.art-camp');
+
 Route::get('/gallery/rhythm', function() {
     return view('web.art-gallery.rhythm-show');
 });
