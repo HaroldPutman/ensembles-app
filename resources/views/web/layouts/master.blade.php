@@ -8,7 +8,7 @@
   <link rel="icon" href="./favicon.ico" sizes="any"><!-- 32×32 -->
   <link rel="icon" href="./image/treble-clef.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./image/treble-clef-180.png"><!-- 180×180 -->
-  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="manifest" href="/manifest.webmanifest">
   @vite('resources/css/app.css')
 </head>
 <body class="flex flex-col min-h-screen">
@@ -18,5 +18,6 @@
   </main>
   @include('web.layouts.footer')
   @vite('resources/js/app.ts')
+  @stack('scripts')
 </body>
 </html>

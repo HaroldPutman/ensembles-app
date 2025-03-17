@@ -16,7 +16,8 @@ class RegistrationController extends Controller
      * @param Course $course The course being registered
      * @param string $payment The verified payment transaction ID from PayPal or a Pseudo ID.
      */
-    private function registerStudent($student, $course, $payment) {
+    private function registerStudent($student, $course, $payment)
+    {
         $already = Registration::where([
             'student_id' => $student->id,
             'course_id' => $course->id
@@ -27,7 +28,8 @@ class RegistrationController extends Controller
                 'course' => $course,
             ]);
         }
-        $student->courses()->attach($course->id, ['payment' => $payment]);
+        $answer = session()->get('answer');
+        $student->courses()->attach($course->id, ['payment' => $payment, 'answer' => $answer]);
         // Mark the course full if it is.
         if ($course->size_max && $course->students()->count() >= $course->size_max) {
             $course->status = 'full';
@@ -44,7 +46,8 @@ class RegistrationController extends Controller
      *  - transactionId - The verified payment
      * @return \Illuminate\Contracts\View\View A transaction success page
      */
-    public function thankyou(Request $request) {
+    public function thankyou(Request $request)
+    {
 
         $student = Student::find($request->input('studentId'));
         if (!$student) {
@@ -57,7 +60,8 @@ class RegistrationController extends Controller
         return $this->registerStudent($student, $course, $request->input('transactionId'));
     }
 
-    public function register($classId) {
+    public function register($classId)
+    {
         $course = Course::find($classId);
         if (!$course || $course->status != 'open') {
             abort(404);
@@ -77,7 +81,8 @@ class RegistrationController extends Controller
      *   - course
      * @return \Illuminate\Contracts\View\View A view with the PayPal control
      */
-    public function create(Request $request) {
+    public function create(Request $request)
+    {
         $validated = $request->validate([
             'student_firstname' => 'required',
             'student_lastname' => 'required',
@@ -141,8 +146,11 @@ class RegistrationController extends Controller
                 'course' => $course,
             ]);
         }
-        $request->session()->put('student', $student);
-        $request->session()->put('course', $course);
+        $request->session()->put([
+            'student' => $student,
+            'course' => $course,
+            'answer' => $request->input('answer')
+        ]);
         return $course->donation ?
             view('web.public.donation', [
                 'student' => $student,
@@ -156,17 +164,26 @@ class RegistrationController extends Controller
             ]);
     }
 
-    public function donate(Request $request) {
-        $student = $request->session()->get('student', function () use($request) {
-            Student::find($request->input('studentId'));
+    public function donate(Request $request)
+    {
+        $student = $request->session()->get('student', function () use ($request) {
+            return Student::find($request->input('studentId'));
         });
         if (!$student) {
+            \Log::error('Student not found in session or by ID', [
+                'studentId' => $request->input('studentId'),
+                'session' => $request->session()->all()
+            ]);
             abort(404);
         }
-        $course = $request->session()->get('course', function () use($request) {
+        $course = $request->session()->get('course', function () use ($request) {
             return Course::find($request->input('courseId'));
         });
         if (!$course) {
+            \Log::error('Course not found in session or by ID', [
+                'courseId' => $request->input('courseId'),
+                'session' => $request->session()->all()
+            ]);
             abort(404);
         }
         $willDonate = $request->input('will-donate');
@@ -182,18 +199,19 @@ class RegistrationController extends Controller
         return $this->registerStudent($student, $course, 'DONATION $0');
     }
 
-    public function paymentRetry(Request $request) {
+    public function paymentRetry(Request $request)
+    {
 
         $failure = $request->has('errorMessage') ?
             'We weren’t able to process your payment. Check all the details are correct and try again or try a different payment method.' :
             null;
-        $student = $request->session()->get('student', function () use($request) {
-            Student::find($request->input('studentId'));
+        $student = $request->session()->get('student', function () use ($request) {
+           return Student::find($request->input('studentId'));
         });
         if (!$student) {
             abort(404);
         }
-        $course = $request->session()->get('course', function () use($request) {
+        $course = $request->session()->get('course', function () use ($request) {
             return Course::find($request->input('courseId'));
         });
         if (!$course) {
