@@ -167,7 +167,7 @@ class RegistrationController extends Controller
     public function donate(Request $request)
     {
         $student = $request->session()->get('student', function () use ($request) {
-            Student::find($request->input('studentId'));
+            return Student::find($request->input('studentId'));
         });
         if (!$student) {
             \Log::error('Student not found in session or by ID', [
@@ -206,7 +206,7 @@ class RegistrationController extends Controller
             'We weren’t able to process your payment. Check all the details are correct and try again or try a different payment method.' :
             null;
         $student = $request->session()->get('student', function () use ($request) {
-            Student::find($request->input('studentId'));
+           return Student::find($request->input('studentId'));
         });
         if (!$student) {
             abort(404);

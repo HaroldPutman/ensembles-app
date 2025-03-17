@@ -110,7 +110,7 @@
             @if ($course->question)
             <div>
                 <label for="answer" class="block mb-1 text-left text-sm font-medium text-gray-dark">{{ $course->question }}</label>
-                <textarea id="answer" name="answer" rows="2" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="Your answer...">{{old('registration_answer')}}</textarea>
+                <textarea id="answer" name="answer" rows="2" class="block p-2.5 w-full text-sm text-gray-dark bg-gray-mist rounded-md shadow-sm border border-gray-light focus:ring-primary focus:border-primary-500" placeholder="Your answer...">{{old('answer')}}</textarea>
             </div>
             @endif
             <div>
