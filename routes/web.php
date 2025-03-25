@@ -78,6 +78,8 @@ Route::view('/music-camp', 'web.static.music-camp');
 
 Route::view('/art-camp', 'web.static.art-camp');
 
+Route::view('/make-slime', 'web.static.make-slime');
+
 Route::get('/gallery/rhythm', function() {
     return view('web.art-gallery.rhythm-show');
 });
