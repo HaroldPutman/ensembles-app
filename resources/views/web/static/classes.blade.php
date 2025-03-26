@@ -7,12 +7,10 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            Ensembles typically runs six week sessions of group lessons.
-            To accommodate GCCS spring break,
-            this session is split into two three week parts <span class="font-bold">Februrary 24 - March 15</span> ,
-            and <span class="font-bold">March 24 - April 12</span> with <span class="font-bold">no classes March 16 - March 22</span>.
-            The cost of the six-week session is $75 per student. Scholarships
-            are available.
+            Ensembles typically runs six week sessions of group lessons. The next session runs from
+            <em class="font-bold">April 14 through May 24</em>.
+            The cost of the six-week session is $75 per student.
+            Scholarships are available.
         </p>
         <p class="mt-4 text-lg">
             All classes are held at Ensembles, 1120 Monroe St. (Across the street from
