@@ -10,7 +10,7 @@
         <div class="relative text-center">
             <h2
                 class="text-4xl text-amber tracking-tight leading-10 font-medium sm:text-5xl sm:leading-none md:text-6xl">
-                Open for the Arts</h2>
+                 Spring into the Arts</h2>
             <p class="mt-3 text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5">
                 We are located at 1120 Monroe St. in Charlestown, Indiana.
                 Directly across the street from the Charlestown High School tennis courts.
