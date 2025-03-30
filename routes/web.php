@@ -80,6 +80,8 @@ Route::view('/art-camp', 'web.static.art-camp');
 
 Route::view('/make-slime', 'web.static.make-slime');
 
+Route::view('/minis', 'web.static.minis');
+
 Route::get('/gallery/rhythm', function() {
     return view('web.art-gallery.rhythm-show');
 });
