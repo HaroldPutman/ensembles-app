@@ -72,13 +72,15 @@ Route::get('/volunteer', function() {
     return view('web.static.volunteer');
 });
 
-Route::view('/piano-camp', 'web.static.piano-camp');
+Route::view('/piano-camp', 'web.static.piano-camp')->name('piano-camp');
 
-Route::view('/music-camp', 'web.static.music-camp');
+Route::view('/music-camp', 'web.static.music-camp')->name('music-camp');
 
-Route::view('/art-camp', 'web.static.art-camp');
+Route::view('/art-camp', 'web.static.art-camp')->name('art-camp');
 
-Route::view('/make-slime', 'web.static.make-slime');
+Route::view('/summer2025', 'web.static.summer2025')->name('summer2025');
+
+Route::view('/make-slime', 'web.static.make-slime')->name('make-slime');
 
 Route::view('/minis', 'web.static.minis');
 
