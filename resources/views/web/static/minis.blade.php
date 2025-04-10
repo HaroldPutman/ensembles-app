@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('title', 'Piano Camp')
+@section('title', 'Mini Musicians')
 
 @section('content')
 
