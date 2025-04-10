@@ -82,7 +82,7 @@ Route::view('/summer2025', 'web.static.summer2025')->name('summer2025');
 
 Route::view('/make-slime', 'web.static.make-slime')->name('make-slime');
 
-Route::view('/minis', 'web.static.minis');
+Route::view('/minis', 'web.static.minis')->name('minis');
 
 Route::get('/gallery/rhythm', function() {
     return view('web.art-gallery.rhythm-show');

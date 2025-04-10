@@ -30,7 +30,7 @@
             <h2 class="text-2xl font-bold text-primary mb-3">Piano Camps</h2>
             <p class="text-gray-dark mb-4">
                 Whether you are a beginner, have some experience, or are a seasoned pianist, our piano camps offer the perfect environment
-                have fun and develop your skills. We'll have lessons, games, and performance opportunities.
+                to have fun and develop your skills. We'll have lessons, games, and performance opportunities.
                 Join us Monday June 23 to Friday June 27 daily 9:00 AM - 12:00 PM (ages 8-12) or 1:00 PM - 4:00 PM (ages 13-18).
             </p>
             <a href="{{ route('piano-camp') }}" class="w-32 inline-block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark text-center">Go Piano!</a>
