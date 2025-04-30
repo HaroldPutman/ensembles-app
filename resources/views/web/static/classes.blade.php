@@ -37,7 +37,7 @@
             </p>
             <p class="text-gray">{{ $course->age_range }}</p>
             <p>{{ $course->description }}</p>
-            @if ($course->status == 'full')
+            @if ($course->status == 'full' || $course->status == 'locked')
                 <p class="text-xl text-error italic text-right">Sorry, this class is full.</p>
             @endif
            <p class="flex justify-end">
