@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -19,7 +18,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //  This is a destructive operation, so we need to be careful.
+        //  This is a destructive operation. If any courses have the 'locked' status
+        //  when this migration is rolled back, those courses will either:
+        //  1. Cause an error during migration, or
+        //  2. Have their status silently changed to a default value
+        //  Consider manually updating locked courses before rolling back.
         DB::statement("ALTER TABLE courses MODIFY COLUMN status ENUM('unavailable','open','full','closed') NOT NULL");
     }
 };
