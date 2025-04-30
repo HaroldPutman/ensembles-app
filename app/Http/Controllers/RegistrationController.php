@@ -63,7 +63,7 @@ class RegistrationController extends Controller
     public function register($classId)
     {
         $course = Course::find($classId);
-        if (!$course || $course->status != 'open') {
+        if (!$course || !in_array($course->status, ['open', 'locked'])) {
             abort(404);
         }
         // If the course has an alternate registration URL, redirect to it.
