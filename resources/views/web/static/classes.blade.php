@@ -8,7 +8,7 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
             Ensembles typically runs six week sessions of group lessons. The next session runs from
-            <em class="font-bold">April 14 through May 24</em>.
+            <em class="font-bold">August 4 through September 12</em>.
             The cost of the six-week session is $75 per student.
             Scholarships are available.
         </p>
