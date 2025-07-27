@@ -43,6 +43,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'verify_peer' => false,
+            'verify_peer_name' => false,
         ],
 
         'smtp' => [
@@ -54,6 +56,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'verify_peer' => false,
+            'verify_peer_name' => false,
         ],
 
         'ses' => [
