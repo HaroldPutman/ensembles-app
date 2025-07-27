@@ -10,6 +10,17 @@
   <link rel="apple-touch-icon" href="./image/treble-clef-180.png"><!-- 180×180 -->
   <link rel="manifest" href="/manifest.webmanifest">
   @vite('resources/css/app.css')
+  <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+  <script>
+    // Version: 2.0
+    window.Brevo = window.Brevo || [];
+    Brevo.push([
+      "init",
+      {
+        client_key: "sw49m3ll82razqvjt2nkz9v5"
+      }
+    ]);
+  </script>
 </head>
 <body class="flex flex-col min-h-screen">
   @include('web.layouts.header')
