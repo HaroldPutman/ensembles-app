@@ -7,10 +7,10 @@
     <header class="mx-auto max-w-2xl md:text-center px-2">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Classes</h1>
         <p class="mt-6 text-lg">
-            Ensembles typically runs six week sessions of group lessons. To accommodate GCCS fall break,
-            this session is split into two three week parts <span class="font-bold">September 15 - October 3</span>,
-            and <span class="font-bold">October 13 - October 31</span> with
-            <span class="font-bold">no classes October 6-10</span>.
+            Ensembles typically runs six week sessions of group lessons. To accommodate GCCS Thanksgiving break,
+            this session is split into two three week parts <span class="font-bold">November 3 - November 21</span>,
+            and <span class="font-bold">December 1 - December 19</span> with
+            <span class="font-bold">no classes November 24-28</span>.
 
             The cost of the six-week session is $75 per student.
             Scholarships are available.
