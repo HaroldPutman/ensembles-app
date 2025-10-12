@@ -7,7 +7,11 @@
     <header class="mx-auto max-w-2xl md:text-center">
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Registration</h1>
         <p class="mt-6 text-lg leading-8">
-          Let's get your student signed up for <strong class="font-bold">{{ $course->name }}</strong>.
+          Let's get
+          @if ($course->min_age < 13)
+            your student
+          @endif
+          signed up for <strong class="font-bold">{{ $course->name }}</strong>.
         </p>
         @if ($course->duration > 1)
         <p class="mt-6 text-lg leading-8">
@@ -19,7 +23,7 @@
           @else
             This class meets {{ $course->start->format('l') }}s at {{ $course->start->format('g:i A') }} for {{ $course->duration }} weeks starting {{ $course->start->format('M d') }}.
           @endif
-          It is open to students {{ strtolower($course->age_range) }}.
+          It is open to {{ strtolower($course->age_range) }}.
           @if ($course->donation)
             There is no charge for this class.
           @else
@@ -29,7 +33,7 @@
         @else
         <p class="mt-6 text-lg leading-8">
           This event is on {{ $course->start->format('l, M d') }} at {{ $course->start->format('g:i A') }}.
-          It is open to students {{ strtolower($course->age_range) }}.
+          It is open to {{ strtolower($course->age_range) }}.
           @if ($course->donation)
             There is no charge for this event.
           @else
@@ -55,20 +59,20 @@
             <!-- filled in after birthdate is entered -->
             <input type="hidden" name="age" value=""/>
             <div>
-                <label for="student_firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student name</label>
+                <label for="student_firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student/Participant name</label>
                 <div class="grid grid-cols-2 gap-4">
-                    <input type="text" id="student_firstname" name="student_firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Student First Name" value="{{old('student_firstname')}}" required>
-                    <input type="text" id="student_lastname" name="student_lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Student Last Name" value="{{old('student_lastname')}}" required>
+                    <input type="text" id="student_firstname" name="student_firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Participant First Name" value="{{old('student_firstname')}}" required>
+                    <input type="text" id="student_lastname" name="student_lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Participant Last Name" value="{{old('student_lastname')}}" required>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student birthdate <small class="text-xs">(enter like 3/21/1974)</small></label>
+                    <label for="birthdate" class="block mb-1 text-left text-sm font-medium text-gray-dark">Student/Participant birthdate <small class="text-xs">(enter like 3/21/1974)</small></label>
                     <input type="text" id="birthdate" name="birthdate" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="mm/dd/yyyy" value="{{old('birthdate')}}" required pattern="(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}">
                 </div>
             </div>
             <div>
-                <label for="firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name <small class="text-xs">(enter it again if you are the student)</small></label>
+                <label for="firstname" class="block mb-1 text-left text-sm font-medium text-gray-dark">Your name <small class="text-xs">(enter it again if you are the student/participant)</small></label>
                 <div class="grid grid-cols-2 gap-4">
                     <input type="text" id="firstname" name="firstname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="First Name" value="{{old('firstname')}}" required>
                     <input type="text" id="lastname" name="lastname" class="shadow-sm bg-gray-mist border border-gray-light text-gray-dark text-sm rounded-md focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Last Name" value="{{old('lastname')}}" required>
