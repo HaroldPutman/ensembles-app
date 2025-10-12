@@ -8,7 +8,7 @@
         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-dark sm:text-4xl">Registration</h1>
         <p class="mt-6 text-lg leading-8">
           Let's get
-          @if ($course->min_age < 13)
+          @if ($course->age_min < 13)
             your student
           @endif
           signed up for <strong class="font-bold">{{ $course->name }}</strong>.
